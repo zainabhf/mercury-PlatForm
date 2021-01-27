@@ -18,8 +18,19 @@ public class Course {
 	private String  coursePicture;
 	private Date startDate;
 	private Date endtDate;
+	private String courseUrl;
 	
-<<<<<<< HEAD
+
+	public String getCourseUrl() {
+		return courseUrl;
+	}
+
+
+	public void setCourseUrl(String courseUrl) {
+		this.courseUrl = courseUrl;
+	}
+
+
 	@ManyToMany
 	@JoinTable(name = "user_course",
 				joinColumns = { @JoinColumn(name = "course_id") },
@@ -111,18 +122,7 @@ public class Course {
 		this.teacher = teacher;
 	}
 	
-=======
-//	@ManyToMany
-//	@JoinTable(name = "teacher",
-//				joinColumns = { @JoinColumn(name = "course_id") },
-//				inverseJoinColumns = { @JoinColumn(name = "teacher_id")})
-//	private Set<Teacher> teachers;
-//	
-//	@ManyToOne
-//	@JoinColumn(name = "FK_TeacherId")
-//	private Teacher Teacher;
-//	
->>>>>>> model
+
 	
 	
 	
