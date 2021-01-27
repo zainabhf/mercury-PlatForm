@@ -1,5 +1,7 @@
 package com.ga.mercury.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,7 +20,48 @@ public class Teacher {
 		
 		private String emailAddress;
 		private String certificate;
-		//test
-//		@OneToMany(mappedBy="teacher")
-//		private Set<Course> courses;
+		
+		@OneToMany(mappedBy="teacher")
+		private Set<Course> courses;
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public String getTeacherName() {
+			return teacherName;
+		}
+
+		public void setTeacherName(String teacherName) {
+			this.teacherName = teacherName;
+		}
+
+		public String getEmailAddress() {
+			return emailAddress;
+		}
+
+		public void setEmailAddress(String emailAddress) {
+			this.emailAddress = emailAddress;
+		}
+
+		public String getCertificate() {
+			return certificate;
+		}
+
+		public void setCertificate(String certificate) {
+			this.certificate = certificate;
+		}
+
+		public Set<Course> getCourses() {
+			return courses;
+		}
+
+		public void setCourses(Set<Course> courses) {
+			this.courses = courses;
+		}
+		
 }
