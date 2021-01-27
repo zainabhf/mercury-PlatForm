@@ -18,6 +18,7 @@ public class Teacher {
 		
 		private String emailAddress;
 		private String certificate;
+		//test
 //		@OneToMany(mappedBy="teacher")
 //		private Set<Course> courses;
 }
