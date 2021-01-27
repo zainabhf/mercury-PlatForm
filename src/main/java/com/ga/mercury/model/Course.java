@@ -18,16 +18,16 @@ public class Course {
 	private Date startDate;
 	private Date endtDate;
 	
-	@ManyToMany
-	@JoinTable(name = "teacher",
-				joinColumns = { @JoinColumn(name = "course_id") },
-				inverseJoinColumns = { @JoinColumn(name = "teacher_id")})
-	private Set<Teacher> teachers;
-	
-	@ManyToOne
-	@JoinColumn(name = "FK_TeacherId")
-	private Teacher Teacher;
-	
+//	@ManyToMany
+//	@JoinTable(name = "teacher",
+//				joinColumns = { @JoinColumn(name = "course_id") },
+//				inverseJoinColumns = { @JoinColumn(name = "teacher_id")})
+//	private Set<Teacher> teachers;
+//	
+//	@ManyToOne
+//	@JoinColumn(name = "FK_TeacherId")
+//	private Teacher Teacher;
+//	
 	
 	
 	
