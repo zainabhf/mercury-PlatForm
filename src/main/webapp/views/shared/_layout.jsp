@@ -8,11 +8,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-
-
-=======
 <h1>${Welcome}</h1>
->>>>>>> cb7f123aa4811045ff04eb1af36d9cef6362ffc3
 </body>
 </html>
