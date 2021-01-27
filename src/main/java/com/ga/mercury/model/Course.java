@@ -19,6 +19,7 @@ public class Course {
 	private Date startDate;
 	private Date endtDate;
 	
+<<<<<<< HEAD
 	@ManyToMany
 	@JoinTable(name = "user_course",
 				joinColumns = { @JoinColumn(name = "course_id") },
@@ -110,6 +111,18 @@ public class Course {
 		this.teacher = teacher;
 	}
 	
+=======
+//	@ManyToMany
+//	@JoinTable(name = "teacher",
+//				joinColumns = { @JoinColumn(name = "course_id") },
+//				inverseJoinColumns = { @JoinColumn(name = "teacher_id")})
+//	private Set<Teacher> teachers;
+//	
+//	@ManyToOne
+//	@JoinColumn(name = "FK_TeacherId")
+//	private Teacher Teacher;
+//	
+>>>>>>> model
 	
 	
 	

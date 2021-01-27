@@ -20,6 +20,7 @@ public class Teacher {
 		
 		private String emailAddress;
 		private String certificate;
+<<<<<<< HEAD
 		
 		@OneToMany(mappedBy="teacher")
 		private Set<Course> courses;
@@ -64,4 +65,9 @@ public class Teacher {
 			this.courses = courses;
 		}
 		
+=======
+		//test
+		@OneToMany(mappedBy="teacher")
+		private Set<Course> courses;
+>>>>>>> model
 }
