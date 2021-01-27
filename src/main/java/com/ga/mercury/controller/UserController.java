@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ga.mercury.dao.UserDao;
 import com.ga.mercury.model.User;
 
 @Controller
@@ -16,8 +17,8 @@ public class UserController {
 	@Autowired
 	private Environment env;
 	
-//	@Autowired
-//	private UserDao userDao;
+	@Autowired
+	private UserDao userDao;
 	
 	@GetMapping("/user/profile")
 	public ModelAndView userProfile(){
@@ -36,10 +37,10 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		
 		mv.setViewName("user/login");
-		
+
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
-		
+
 		return mv;
 	}
 	
@@ -65,8 +66,9 @@ public class UserController {
 	@PostMapping("/user/register")
 	public String register(User user){
 		
-//		userDao.save(user);
+		userDao.save(user);
 		return "redirect:user/profile";
 	}
+
 	
 }
