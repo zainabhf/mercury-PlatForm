@@ -14,8 +14,6 @@
 <label> Description</label>
 <input type="text" name="courseDescreption">
 </div>
-
-
 <div>
 <label> Start At</label>
 <input type="date" name="startDate">
@@ -33,7 +31,7 @@
 <div>
 <label>Techeaing By </label>
 		<select name="teacher">
-			<c:forEach items="${teachers}" var="teacher">
+			<c:forEach items="${teacher}" var="teacher">
 				<option value="${teacher.id}"> ${teacher.teacherName} </option>
 			</c:forEach>	
 		</select>
