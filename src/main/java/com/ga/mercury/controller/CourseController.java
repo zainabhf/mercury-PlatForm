@@ -42,7 +42,7 @@ public class CourseController {
 	}
 	// adding course n data base
 	@PostMapping("course/add")
-	public String addArticle(Course courses) {
+	public String addCourse(Course courses) {
 		cdao.save(courses);
 		return "redirect:/course/index";
 	}
