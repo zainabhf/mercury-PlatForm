@@ -6,8 +6,8 @@ Teaching by: ${course.teacher.teacherName}
 
 
 
+<img src="${course.coursePicture}" width="500" height="600">
 
-<video width="320" height="240" controls>
-  <source src="${course.courseUrl}">
-  <source src="${course.courseUrl}">
-</video>
+
+<iframe width="420" height="345" src="${course.courseUrl}">
+</iframe>

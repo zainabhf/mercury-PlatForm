@@ -30,7 +30,7 @@
 </div>
 
 <div>
-<label> Course Link</label>
+<label> pic</label>
 <input type="text" name="coursePicture">
 </div>
 <div>
