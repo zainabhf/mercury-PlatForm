@@ -156,8 +156,13 @@ public class UserController {
 	}
 	
 
-//  this is for logout
-//	HttpSession session = request.getSession();
-//	session.invalidate();
+	
+		 @GetMapping("/user/logout")
+		 public String logout() {
+			 HttpSession session = request.getSession();
+			 session.invalidate();
+			 
+			 return "redirect:/";
+		 }
 	
 }

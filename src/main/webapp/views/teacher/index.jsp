@@ -4,16 +4,20 @@
 
 <c:forEach items="${teachers}" var="teacher">
 		<tr>
- Teachers's Name: <td>${teacher.teacherName}</td>
- 		
- Email Address:<td>${teacher.emailAddress}</td>
-	Certificate:		<td>${teacher.certificate}</td>
+<a href="${appName}teacher/delete?id=${teacher.id}">Delete</a>
+ 
+<a href="${appName}teacher/edit?id=${teacher.id}">Edit</a> | 
+
+ 	Teachers's Name: ${teacher.teacherName}
+ Email Address:${teacher.emailAddress}
+	Certificate:	${teacher.certificate}
 
 	Courses: <c:forEach items="${teacher.getCourses()}" var="course">
 			<div> ${course.courseName}</div> 
 
 			
 			<hr>
+			</tr>
 	</c:forEach>
 		</c:forEach>
 	
