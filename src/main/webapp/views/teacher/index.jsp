@@ -9,8 +9,8 @@
  Email Address:<td>${teacher.emailAddress}</td>
 	Certificate:		<td>${teacher.certificate}</td>
 
-	Courses: <c:forEach items="${teacher.getCourses()}" var="Courses">
-			<div>Title: ${course.courseName} </div> 
+	Courses: <c:forEach items="${teacher.getCourses()}" var="course">
+			<div> ${course.courseName}</div> 
 
 			
 			<hr>
