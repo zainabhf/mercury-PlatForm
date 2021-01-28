@@ -25,8 +25,8 @@
 </div>
 
 <div>
-<label> Course Link</label>
-<input type="text" name="courseUrl">
+<label> Course Video</label>
+<input type="file" name="courseUrl" type="video/mp4">
 </div>
 <div>
 <label>Teaching By </label>

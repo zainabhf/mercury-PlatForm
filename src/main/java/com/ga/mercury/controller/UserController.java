@@ -36,9 +36,7 @@ public class UserController {
 		hc.setAppName(mv, env);
 		
 		return mv;
-		
 	}
-	
 	
 	@GetMapping("/user/login")
 	public ModelAndView login(){
@@ -78,5 +76,38 @@ public class UserController {
 		return "redirect:user/profile";
 	}
 
+	
+	@GetMapping("user/edit")
+	public ModelAndView editUser(@RequestParam int id) {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/edit");
+		
+		User user = userDao.findById(id);
+		mv.addObject("user", user);
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		return mv;
+	}
+	
+	@PostMapping("user/edit")
+	public String editUser(User user) {
+		
+		userDao.save(user);
+		
+		return "redirect:user/edit";
+	}
+	
+//  public boolean isUserLoggedIn() {
+//	  
+//	  HttpSession session = request.getSession();
+//	  
+//	  if(session.getAttribute("user") == null) return false;
+//	  
+//	 return true; 
+// }
+	
 	
 }
