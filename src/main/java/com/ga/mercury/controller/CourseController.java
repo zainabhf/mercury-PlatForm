@@ -26,7 +26,7 @@ public class CourseController {
 	@Autowired 
 	private Environment env;
 	@Autowired
-	private CourseDao cdao;
+	private CourseDao courseDao;
 	
 	// add course
 	@GetMapping("course/add")
@@ -43,14 +43,14 @@ public class CourseController {
 	// adding course n data base
 	@PostMapping("course/add")
 	public String addCourse(Course courses) {
-		cdao.save(courses);
+		courseDao.save(courses);
 		return "redirect:/course/index";
 	}
 	
 	//index course
 	@GetMapping("course/index")
 	public ModelAndView getcourse() {
-		var cu = cdao.findAll();
+		var cu = courseDao.findAll();
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/index");
@@ -65,7 +65,7 @@ public class CourseController {
 	//details
 	@GetMapping("/course/detail")
 	public ModelAndView courseDetails(@RequestParam int id) {
-		Course course = cdao.findById(id);
+		Course course = courseDao.findById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/detail");
 		mv.addObject("course", course);
@@ -79,7 +79,7 @@ public class CourseController {
 	
 	@GetMapping("course/edit")
 	public ModelAndView editcourse(@RequestParam int id) {
-		Course course = cdao.findById(id);
+		Course course = courseDao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/edit");
@@ -96,7 +96,7 @@ public class CourseController {
 	
 	@GetMapping("/course/delete")
 	public String deletecourse(@RequestParam int id) {
-		cdao.deleteById(id);
+		courseDao.deleteById(id);
 		return "redirect:/course/index";
 	}
 }

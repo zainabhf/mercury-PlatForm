@@ -1,6 +1,8 @@
-<jsp:include page="../shared/_layout.jsp" /><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="../shared/_layout.jsp" />
+
+
 
 <form action="${appName}course/add" method="post">
 
