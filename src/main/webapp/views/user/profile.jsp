@@ -7,8 +7,9 @@
  ${user.gender} <br>
  ${user.emailAddress} <br>
  <a href="${appName}user/edit?id=${user.id}">Edit Profile</a>
+ 
  <c:forEach items="${user.getCourses()}" var="course">
- - ${course.courseName} <br>
+ - ${course.courseName}/ <br>
  </c:forEach>
 </p></div>
 
