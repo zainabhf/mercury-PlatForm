@@ -2,14 +2,17 @@ package com.ga.mercury.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.ga.mercury.dao.CourseDao;
 import com.ga.mercury.dao.TeacherDao;
 import com.ga.mercury.model.Teacher;
 
-
+@Controller
 public class TeacherController {
 	@Autowired 
 	private Environment env;
@@ -27,7 +30,7 @@ public class TeacherController {
 //}
 	//to display the teachers in home teacher
 	@Autowired
-	TeacherDao dao;
+	private TeacherDao dao;
 	@GetMapping("/teacher/home")
 	public ModelAndView getTeacher() {
 		var it = dao.findAll();
@@ -45,6 +48,8 @@ public class TeacherController {
 	public ModelAndView addTeacher() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("teacher/add");
+//		var te = dao.findAll();
+//		mv.addObject("teacher", te);
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		return mv;
@@ -56,7 +61,7 @@ public class TeacherController {
 	dao.save(teacher);
 	return "redirect:/teacher/home";}
 	// request for edit teacher
-	@GetMapping("/author/edit")
+	@GetMapping("/teacher/edit")
 	public ModelAndView editTeacher(@RequestParam int id) {
 		Teacher teacher = dao.findById(id);
 		
