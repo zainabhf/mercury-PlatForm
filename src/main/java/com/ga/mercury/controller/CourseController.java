@@ -35,7 +35,7 @@ public class CourseController {
 		mv.setViewName("course/add");
 		
 		var te = teacherDao.findAll();
-		mv.addObject("teacherDao", te);
+		mv.addObject("teacher", te);
 		
 		HomeController hm = new HomeController();
 		hm.setAppName(mv, env);
@@ -49,12 +49,15 @@ public class CourseController {
 
 		courseDao.save(courses);
 
+
 		return "redirect:/course/index";
 	}
 	
 	//index course
 	@GetMapping("course/index")
+
 	public ModelAndView getCourse() {
+
 		var cu = courseDao.findAll();
 		
 		ModelAndView mv = new ModelAndView();
@@ -71,7 +74,7 @@ public class CourseController {
 	@GetMapping("/course/detail")
 	public ModelAndView courseDetails(@RequestParam int id) {
 		Course course = courseDao.findById(id);
-		
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/detail");
 		mv.addObject("course", course);
@@ -84,7 +87,9 @@ public class CourseController {
 	}
 	
 	@GetMapping("course/edit")
-	public ModelAndView editCourse(@RequestParam int id) {
+
+	public ModelAndView editcourse(@RequestParam int id) {
+
 		Course course = courseDao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
