@@ -1,7 +1,7 @@
 <jsp:include page="../shared/_layout.jsp" />
 
 
-<<<<<<< HEAD
+
 Teaching by: ${course.teacher.teacherName}
 <br>
 
@@ -12,7 +12,7 @@ Teaching by: ${course.teacher.teacherName}
 
 <iframe width="420" height="345" src="${course.courseUrl}">
 </iframe>
-=======
+
 <div>
 <img src="${course.coursePicture}">
 <p>
@@ -38,4 +38,4 @@ End Date: ${course.endtDate}<br>
   <source src="${course.courseUrl}">
 </video> 
 -->
->>>>>>> 07f4bfb40313ffab77f27b3a00dbbadb58ea26e5
+
