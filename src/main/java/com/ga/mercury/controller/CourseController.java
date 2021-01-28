@@ -46,7 +46,9 @@ public class CourseController {
 	// adding course n data base
 	@PostMapping("course/add")
 	public String addCourse(Course courses) {
+
 		courseDao.save(courses);
+
 		return "redirect:/course/index";
 	}
 	

@@ -39,7 +39,7 @@
 	</div>
 
 
-	<input type="hidden" name="courseId" value="${article.courseId}">
+	<input type="hidden" name="courseId" value="${course.courseId}">
 
 	<button type="submit">Submit</button>
 </form>
