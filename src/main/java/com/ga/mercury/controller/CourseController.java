@@ -13,7 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.mercury.dao.CourseDao;
 import com.ga.mercury.dao.TeacherDao;
+import com.ga.mercury.dao.UserDao;
 import com.ga.mercury.model.Course;
+import com.ga.mercury.model.User;
 
 @Controller
 public class CourseController {
@@ -31,8 +33,12 @@ public class CourseController {
 	
 	@Autowired 
 	private Environment env;
+	
 	@Autowired
 	private CourseDao courseDao;
+	
+	@Autowired
+	private UserDao userDao;
 	
 	// add course
 	@GetMapping("course/add")
@@ -92,19 +98,41 @@ public class CourseController {
 		
 	}
 	
+//	@GetMapping("course/enroll")
+//	public ModelAndView enrollToCourse(){
+//		
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("course/enroll");
+//		
+//		Home
+//		
+//		return mv;
+//	}
+	
 	
 	@PostMapping("course/enroll")
 	public String addCourseToUser(@RequestParam int id) {
 		
 		HttpSession session = request.getSession();
 		
-		var userId = session.getAttribute("id");
+//		var userId = session.getAttribute("id");
+
+		int userId = (int) session.getAttribute("userId");
+		System.err.println("User ID:"+userId);
+		User user = userDao.findById(userId);
+		Course course = courseDao.findById(id);
+		System.err.println("Course ID from param:" + id);
+
 		
-		return "redirect:course/detail";
+
+		user.setCourses(course);
+		
+		return "redirect:index";
 	}
 	
+	
+	
 	@GetMapping("course/edit")
-
 	public ModelAndView editcourse(@RequestParam int id) {
 
 		Course course = courseDao.findById(id);

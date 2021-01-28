@@ -1,4 +1,4 @@
-package com.ga.mercury.controller;
+gitpackage com.ga.mercury.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
