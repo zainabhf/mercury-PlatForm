@@ -1,6 +1,6 @@
 <jsp:include page="../shared/_layout.jsp" />
 
-<form action="${appName}user/registration" method="post" class="form-control">
+<form action="${appName}user/register" method="post" class="form-control">
 	<div class="form-group">
 		<label>Full Name</label>
 		<input type="text" name="fullName" class="form-control">

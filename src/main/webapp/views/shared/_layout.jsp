@@ -9,5 +9,15 @@
 <body>
 
 <h1>${Welcome}</h1>
+
+<nav>
+<a href="${appName}user/login">login</a>
+<a href="${appName}user/register">register</a>
+<a href="${appName}user/profile">profile</a>
+<a href="${appName}">Home</a>
+<a href="${appName}course/index">courses</a>
+<a href="${appName}course/add">add course</a>
+
+</nav>
 </body>
 </html>

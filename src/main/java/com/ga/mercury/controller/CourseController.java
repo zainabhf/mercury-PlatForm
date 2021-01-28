@@ -1,5 +1,8 @@
 package com.ga.mercury.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -22,6 +25,9 @@ public class CourseController {
 	
 	@Autowired
 	private TeacherDao teacherDao;
+	
+	@Autowired
+	private HttpServletRequest request;
 	
 	@Autowired 
 	private Environment env;
@@ -84,6 +90,16 @@ public class CourseController {
 		
 		return mv;
 		
+	}
+	
+	
+	@PostMapping("course/enroll")
+	public String addCourseToUser(@RequestParam int id) {
+		
+//		HttpSession session = request.getSession();
+//		session.getAttribute(null);
+		
+		return "redirect:course/detail";
 	}
 	
 	@GetMapping("course/edit")
