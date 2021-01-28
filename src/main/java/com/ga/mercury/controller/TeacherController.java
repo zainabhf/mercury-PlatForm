@@ -61,6 +61,7 @@ public class TeacherController {
 	dao.save(teacher);
 	return "redirect:/teacher/index";}
 	// request for edit teacher
+
 	@GetMapping("/teacher/edit")
 	public ModelAndView editTeacher(@RequestParam int id) {
 		Teacher teacher = dao.findById(id);
@@ -73,6 +74,7 @@ public class TeacherController {
 		hc.setAppName(mv, env);
 		return mv;
 }
+	
 	//request for delete teacher
 	@GetMapping("/teacher/delete")
 	public String deleteTeacher(@RequestParam int id) {
