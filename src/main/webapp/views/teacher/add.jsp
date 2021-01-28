@@ -12,7 +12,7 @@
 
 <div>
 <label> E-mail Address</label>
-<input type="text" name="emailAdress">
+<input type="text" name="emailAddress">
 </div>
 <div>
 <label>Certificate</label>
