@@ -96,8 +96,9 @@ public class CourseController {
 	@PostMapping("course/enroll")
 	public String addCourseToUser(@RequestParam int id) {
 		
-//		HttpSession session = request.getSession();
-//		session.getAttribute(null);
+		HttpSession session = request.getSession();
+		
+		var userId = session.getAttribute("id");
 		
 		return "redirect:course/detail";
 	}
