@@ -35,7 +35,7 @@ public class CourseController {
 		mv.setViewName("course/add");
 		
 		var te = teacherDao.findAll();
-		mv.addObject("teacherDao", te);
+		mv.addObject("teacher", te);
 		
 		HomeController hm = new HomeController();
 		hm.setAppName(mv, env);
@@ -46,23 +46,18 @@ public class CourseController {
 	// adding course n data base
 	@PostMapping("course/add")
 	public String addCourse(Course courses) {
-<<<<<<< HEAD
-		courseDao.save(courses);
-=======
 
 		courseDao.save(courses);
 
->>>>>>> b92492d81d6b9237226666fa0f0076d375f009da
+
 		return "redirect:/course/index";
 	}
 	
 	//index course
 	@GetMapping("course/index")
-<<<<<<< HEAD
-	public ModelAndView getcourse() {
-=======
+
 	public ModelAndView getCourse() {
->>>>>>> b92492d81d6b9237226666fa0f0076d375f009da
+
 		var cu = courseDao.findAll();
 		
 		ModelAndView mv = new ModelAndView();
@@ -79,10 +74,7 @@ public class CourseController {
 	@GetMapping("/course/detail")
 	public ModelAndView courseDetails(@RequestParam int id) {
 		Course course = courseDao.findById(id);
-<<<<<<< HEAD
-=======
-		
->>>>>>> b92492d81d6b9237226666fa0f0076d375f009da
+
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/detail");
 		mv.addObject("course", course);
@@ -95,11 +87,9 @@ public class CourseController {
 	}
 	
 	@GetMapping("course/edit")
-<<<<<<< HEAD
+
 	public ModelAndView editcourse(@RequestParam int id) {
-=======
-	public ModelAndView editCourse(@RequestParam int id) {
->>>>>>> b92492d81d6b9237226666fa0f0076d375f009da
+
 		Course course = courseDao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
