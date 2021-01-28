@@ -3,21 +3,20 @@
 
 
 <c:forEach items="${teachers}" var="teacher">
-		<tr>
-<a href="${appName}teacher/delete?id=${teacher.id}">Delete</a>
+<p>
+Teachers's Name: ${teacher.teacherName}<br>
+Email Address: ${teacher.emailAddress}<br>
+Certificate: ${teacher.certificate}<br>
+
  
-<a href="${appName}teacher/edit?id=${teacher.id}">Edit</a> | 
-
- 	Teachers's Name: ${teacher.teacherName}
- Email Address:${teacher.emailAddress}
-	Certificate:	${teacher.certificate}
-
-	Courses: <c:forEach items="${teacher.getCourses()}" var="course">
-			<div> ${course.courseName}</div> 
-
-			
-			<hr>
-			</tr>
+<a href="${appName}teacher/edit?id=${teacher.id}">Edit</a> |
+<a href="${appName}teacher/delete?id=${teacher.id}">Delete</a><br>
+ 
+Courses:<br> 
+<c:forEach items="${teacher.getCourses()}" var="course">
+			- ${course.courseName} 
 	</c:forEach>
-		</c:forEach>
+	<hr>
+<p>
+</c:forEach>
 	

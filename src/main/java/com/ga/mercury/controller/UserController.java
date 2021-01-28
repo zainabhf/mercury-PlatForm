@@ -44,7 +44,7 @@ public class UserController {
 			mv.setViewName("user/profile");
 			
 			User user = userDao.findById(id);
-			mv.addObject("user",user);
+			mv.addObject("user", user);
 			
 			
 		}else {
@@ -82,6 +82,7 @@ public class UserController {
 			if(password.equals(matchUser.getPassword())) {
 				
 				session.setAttribute("user", matchUser);
+				session.setAttribute("userId", matchUser.getId());
 				session.setAttribute("message", "You're logged in sccessfully");
 				return "redirect:/";
 			}
@@ -142,7 +143,7 @@ public class UserController {
 		
 		userDao.save(user);
 		
-		return "redirect:user/edit";
+		return "redirect:edit";
 	}
 	
 	public boolean isUserLoggedIn() {
@@ -156,13 +157,13 @@ public class UserController {
 	}
 	
 
-	
-		 @GetMapping("/user/logout")
-		 public String logout() {
-			 HttpSession session = request.getSession();
-			 session.invalidate();
-			 
-			 return "redirect:/";
-		 }
+
+	 @GetMapping("/user/logout")
+	 public String logout() {
+		 HttpSession session = request.getSession();
+		 session.invalidate();
+		 
+		 return "redirect:/";
+	 }
 	
 }

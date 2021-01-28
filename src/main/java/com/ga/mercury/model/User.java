@@ -74,8 +74,8 @@ public class User {
 		return courses;
 	}
 
-	public void setCourses(Set<Course> courses) {
-		this.courses = courses;
+	public void setCourses(Course courses) {
+		this.courses.add(courses);
 	}
 	
 	
