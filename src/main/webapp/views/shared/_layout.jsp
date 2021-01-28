@@ -17,6 +17,9 @@
 <a href="${appName}">Home</a>
 <a href="${appName}course/index">courses</a>
 <a href="${appName}course/add">add course</a>
+<a href="${appName}teacher/index">teacher</a>
+<a href="${appName}teacher/add">add teacher</a>
+
 
 </nav>
 </body>
