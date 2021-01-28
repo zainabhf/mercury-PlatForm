@@ -1,6 +1,7 @@
 <jsp:include page="../shared/_layout.jsp" />
 
 
+<<<<<<< HEAD
 Teaching by: ${course.teacher.teacherName}
 <br>
 
@@ -11,3 +12,30 @@ Teaching by: ${course.teacher.teacherName}
 
 <iframe width="420" height="345" src="${course.courseUrl}">
 </iframe>
+=======
+<div>
+<img src="${course.coursePicture}">
+<p>
+<b>Course:${course.courseName}</b><br>
+Descreption: ${course.courseDescreption}<br>
+Start Date: ${course.startDate}<br>
+End Date: ${course.endtDate}<br>
+</p>
+
+<form method="${appName}course/enroll" action="post">
+	<button type="submit">Enroll</button>
+</form>
+</div>
+
+<hr>
+
+<!-- 
+<iframe width="420" height="345" src="${course.courseUrl}">
+</iframe>
+
+<video width="320" height="240" controls>
+  <source src="${course.courseUrl}">
+  <source src="${course.courseUrl}">
+</video> 
+-->
+>>>>>>> 07f4bfb40313ffab77f27b3a00dbbadb58ea26e5

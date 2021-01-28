@@ -36,9 +36,7 @@ public class UserController {
 		hc.setAppName(mv, env);
 		
 		return mv;
-		
 	}
-	
 	
 	@GetMapping("/user/login")
 	public ModelAndView login(){
