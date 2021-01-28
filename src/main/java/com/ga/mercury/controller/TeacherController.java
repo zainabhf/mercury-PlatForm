@@ -31,11 +31,11 @@ public class TeacherController {
 	//to display the teachers in home teacher
 	@Autowired
 	private TeacherDao dao;
-	@GetMapping("/teacher/home")
+	@GetMapping("/teacher/index")
 	public ModelAndView getTeacher() {
 		var it = dao.findAll();
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("teacher/home");
+		mv.setViewName("teacher/index");
 		mv.addObject("teachers", it);
 		
 		HomeController hc = new HomeController();
@@ -59,7 +59,7 @@ public class TeacherController {
 	@PostMapping("teacher/add")	
 	public String addTeacher(Teacher teacher) {
 	dao.save(teacher);
-	return "redirect:/teacher/home";}
+	return "redirect:/teacher/index";}
 	// request for edit teacher
 	@GetMapping("/teacher/edit")
 	public ModelAndView editTeacher(@RequestParam int id) {
@@ -77,7 +77,7 @@ public class TeacherController {
 	@GetMapping("/teacher/delete")
 	public String deleteTeacher(@RequestParam int id) {
 		dao.deleteById(id);
-		return "redirect:/teacher/home";
+		return "redirect:/teacher/index";
 		
 		
 	}
