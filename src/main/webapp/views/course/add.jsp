@@ -29,7 +29,7 @@
 <input type="text" name="courseUrl">
 </div>
 <div>
-<label>Techeaing By </label>
+<label>Teaching By </label>
 		<select name="teacher">
 			<c:forEach items="${teacher}" var="teacher">
 				<option value="${teacher.id}"> ${teacher.teacherName} </option>
