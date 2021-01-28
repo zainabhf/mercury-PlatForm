@@ -2,10 +2,12 @@
 
 
 Teaching by: ${course.teacher.teacherName}
+<br>
+
 
 
 
 <video width="320" height="240" controls>
-  <source src="${course.courseUrl}" type="video/mp4">
-  <source src="${course.courseUrl}"type="video/ogg">
+  <source src="${course.courseUrl}">
+  <source src="${course.courseUrl}">
 </video>

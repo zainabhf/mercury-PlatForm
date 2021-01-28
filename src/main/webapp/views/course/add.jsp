@@ -28,6 +28,11 @@
 <label> Course Link</label>
 <input type="text" name="courseUrl">
 </div>
+
+<div>
+<label> Course Link</label>
+<input type="text" name="coursePicture">
+</div>
 <div>
 <label>Teaching By </label>
 		<select name="teacher">
