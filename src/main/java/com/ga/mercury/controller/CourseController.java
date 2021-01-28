@@ -116,7 +116,7 @@ public class CourseController {
 		hc.setAppName(mv, env);
 		
 		var te = teacherDao.findAll();
-		mv.addObject("teacherDao", te);
+		mv.addObject("teacher", te);
 		
 		return mv;
 	}

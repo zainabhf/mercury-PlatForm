@@ -25,8 +25,13 @@
 </div>
 
 <div>
-<label> Course Video</label>
-<input type="file" name="courseUrl" type="video/mp4">
+<label> Course Link</label>
+<input type="text" name="courseUrl">
+</div>
+
+<div>
+<label> pic</label>
+<input type="text" name="coursePicture">
 </div>
 <div>
 <label>Teaching By </label>

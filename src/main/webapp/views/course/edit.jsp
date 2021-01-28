@@ -35,7 +35,7 @@
 <label>Teaching By </label>
 		<select name="teacher">
 			<c:forEach items="${teacher}" var="teacher">
-				<option value="${teacher.id}"> ${course.teacherName} </option>
+				<option value="${teacher.id}"> ${teacher.teacherName} </option>
 			</c:forEach>	
 		</select>
 	</div>
