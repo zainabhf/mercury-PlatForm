@@ -11,15 +11,22 @@
 <h1>${Welcome}</h1>
 
 <nav>
-<a href="${appName}user/login">login</a>
-<a href="${appName}user/register">register</a>
-<a href="${appName}user/profile">profile</a>
+
 <a href="${appName}">Home</a>
 <a href="${appName}course/index">courses</a>
-<a href="${appName}course/add">add course</a>
-<a href="${appName}teacher/index">teacher</a>
-<a href="${appName}teacher/add">add teacher</a>
 
+<% if(session.getAttribute("user") != null){%>
+	<a href="${appName}course/add">add course</a>
+	<a href="${appName}user/profile?id=${user.id}">profile</a>
+	<a href="${appName}teacher/index">Teachers</a>
+	<a href="${appName}teacher/add">Add teacher</a>
+	<a href="${appName}user/logout">Logout</a>
+	
+<%}else{ %>
+	<a href="${appName}user/login">login</a>
+	<a href="${appName}user/register">register</a>
+	
+<%} %>
 
 </nav>
 </body>
