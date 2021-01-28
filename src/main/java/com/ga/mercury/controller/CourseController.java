@@ -14,43 +14,46 @@ import com.ga.mercury.model.Course;
 
 @Controller
 public class CourseController {
-//course has 1-m with teacher
+//course has 1-m with teacherDao
 	// m-m with user student
 	// admin can add and delete the course
 
 	
 	
 	@Autowired
-	private TeacherDao teacher;
+	private TeacherDao teacherDao;
 	
 	@Autowired 
 	private Environment env;
 	@Autowired
-	private CourseDao cdao;
+	private CourseDao courseDao;
 	
 	// add course
 	@GetMapping("course/add")
 	public ModelAndView addCourse(){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/add");
+		
+		var te = teacherDao.findAll();
+		mv.addObject("teacherDao", te);
+		
 		HomeController hm = new HomeController();
 		hm.setAppName(mv, env);
-		var te = teacher.findAll();
-		mv.addObject("teacher", te);
+		
 		return mv;
 		
 	}
 	// adding course n data base
 	@PostMapping("course/add")
-	public String addArticle(Course courses) {
-		cdao.save(courses);
+	public String addCourse(Course courses) {
+		courseDao.save(courses);
 		return "redirect:/course/index";
 	}
 	
 	//index course
 	@GetMapping("course/index")
-	public ModelAndView getcourse() {
-		var cu = cdao.findAll();
+	public ModelAndView getCourse() {
+		var cu = courseDao.findAll();
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/index");
@@ -65,7 +68,8 @@ public class CourseController {
 	//details
 	@GetMapping("/course/detail")
 	public ModelAndView courseDetails(@RequestParam int id) {
-		Course course = cdao.findById(id);
+		Course course = courseDao.findById(id);
+		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/detail");
 		mv.addObject("course", course);
@@ -78,8 +82,8 @@ public class CourseController {
 	}
 	
 	@GetMapping("course/edit")
-	public ModelAndView editcourse(@RequestParam int id) {
-		Course course = cdao.findById(id);
+	public ModelAndView editCourse(@RequestParam int id) {
+		Course course = courseDao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("course/edit");
@@ -88,15 +92,15 @@ public class CourseController {
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
-		var te = teacher.findAll();
-		mv.addObject("teacher", te);
+		var te = teacherDao.findAll();
+		mv.addObject("teacherDao", te);
 		
 		return mv;
 	}
 	
 	@GetMapping("/course/delete")
 	public String deletecourse(@RequestParam int id) {
-		cdao.deleteById(id);
+		courseDao.deleteById(id);
 		return "redirect:/course/index";
 	}
 }
