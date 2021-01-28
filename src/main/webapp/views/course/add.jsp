@@ -30,9 +30,10 @@
 </div>
 
 <div>
-<label> pic</label>
+<label>Course picture</label>
 <input type="text" name="coursePicture">
 </div>
+
 <div>
 <label>Teaching By </label>
 		<select name="teacher">

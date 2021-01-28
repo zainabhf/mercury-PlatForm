@@ -32,6 +32,10 @@
 <input type="text" name="courseUrl" value ="${course.courseUrl}">
 </div>
 <div>
+<label>Course picture</label>
+<input type="text" name="coursePicture" value ="${course.coursePictur}">
+</div>
+<div>
 <label>Teaching By </label>
 		<select name="teacher">
 			<c:forEach items="${teacher}" var="teacher">

@@ -115,11 +115,14 @@ public class CourseController {
 		
 		HttpSession session = request.getSession();
 		
+//		var userId = session.getAttribute("id");
+
 		int userId = (int) session.getAttribute("userId");
 		System.err.println("User ID:"+userId);
 		User user = userDao.findById(userId);
 		Course course = courseDao.findById(id);
 		System.err.println("Course ID from param:" + id);
+
 		
 
 		user.setCourses(course);

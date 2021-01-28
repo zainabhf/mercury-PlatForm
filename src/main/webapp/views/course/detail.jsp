@@ -1,7 +1,13 @@
 <jsp:include page="../shared/_layout.jsp" />
 
 
+
+
+Teaching by: ${course.teacher.teacherName}
+<br>
+
 <%-- 
+>>>>>>> e08e481e13ff3b3d13c32c488cc6f8ae66636cc7
 
 
 
@@ -10,8 +16,12 @@
 
 <iframe width="420" height="345" src="${course.courseUrl}">
 </iframe>
+<<<<<<< HEAD
+
+=======
 =======
  --%>
+>>>>>>> e08e481e13ff3b3d13c32c488cc6f8ae66636cc7
 <div>
 
 <img src="${course.coursePicture}">
@@ -31,13 +41,5 @@ End Date: ${course.endtDate}<br>
 
 <hr>
 
-<!-- 
-<iframe width="420" height="345" src="${course.courseUrl}">
-</iframe>
 
-<video width="320" height="240" controls>
-  <source src="${course.courseUrl}">
-  <source src="${course.courseUrl}">
-</video> 
--->
 

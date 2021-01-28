@@ -45,11 +45,12 @@ public class TeacherController {
 
 	//requeat for adding teacher
 	@GetMapping("/teacher/add")
+
 	public ModelAndView addTeacher() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("teacher/add");
 //		var te = dao.findAll();
-//		mv.addObject("teacher", te);
+//		mv.addObject("teacher", );
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		return mv;
