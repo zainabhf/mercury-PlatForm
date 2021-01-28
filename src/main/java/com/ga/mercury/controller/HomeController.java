@@ -16,11 +16,10 @@ public class HomeController {
 	@Autowired 
 	private Environment env;
 	
-	
+
 	@GetMapping("/")
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView();
-		
 		mv.setViewName("home/home");
 		
 		setAppName(mv, env);
@@ -32,7 +31,7 @@ public class HomeController {
 		String appName = env.getProperty("app.name");
 		mv.addObject("appName", appName);
 		mv.addObject("Welcome", "Welcome to Mercury PlatForm");
-
+		
 		return mv;
 	}
 	
