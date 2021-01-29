@@ -8,9 +8,11 @@ Teachers's Name: ${teacher.teacherName}<br>
 Email Address: ${teacher.emailAddress}<br>
 Certificate: ${teacher.certificate}<br>
 
- 
+<%if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
 <a href="${appName}teacher/edit?id=${teacher.id}">Edit</a> |
 <a href="${appName}teacher/delete?id=${teacher.id}">Delete</a><br>
+
+ <%}%>
  
 Courses:<br> 
 <c:forEach items="${teacher.getCourses()}" var="course">
