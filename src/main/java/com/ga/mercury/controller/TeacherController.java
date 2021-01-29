@@ -1,5 +1,8 @@
 package com.ga.mercury.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
@@ -18,29 +21,20 @@ public class TeacherController {
 	private Environment env;
 	@Autowired 
 	private UserController uc;
-	
-	//display teacher(teacher home)
-//	@GetMapping("/teacher/home")
-//	public ModelAndView homeTeacher(@RequestParam int id) {
-//		System.out.println(id);
-//		Teacher teacher = dao.findById(id);
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("teacher/home");
-//		mv.addObject("teacher",teacher);
-//		HomeController hc = new HomeController();
-//		hc.setAppName(mv, env);
-//		return mv;
-//}
+	@Autowired
+	private HttpServletRequest request;
+
 	//to display the teachers in home teacher
 	@Autowired
 	private TeacherDao dao;
 	@GetMapping("/teacher/index")
 	public ModelAndView getTeacher() {
-		var it = dao.findAll();
+	//	HttpSession session = request.getSession();
+		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("teacher/index");
-		mv.addObject("teachers", it);
-		
+		var it = dao.findAll();
+		mv.addObject("teachers", it);	
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		
@@ -51,14 +45,14 @@ public class TeacherController {
 
 	public ModelAndView addTeacher() {
 		ModelAndView mv = new ModelAndView();
-	if (!uc.isUserLoggedIn()) {
-			
-		mv.setViewName("user/login");
+
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
+
+		mv.setViewName("teacher/index");
 		return mv;
 		}
 		mv.setViewName("teacher/add");
-//		var te = dao.findAll();
-//		mv.addObject("teacher", );
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
 		return mv;
@@ -68,15 +62,18 @@ public class TeacherController {
 	@PostMapping("teacher/add")	
 	public String addTeacher(Teacher teacher) {
 	dao.save(teacher);
-	return "redirect:/teacher/index";}
+	return "redirect:/teacher/index";
+	
+	}
 	// request for edit teacher
 
 	@GetMapping("/teacher/edit")
 	public ModelAndView editTeacher(@RequestParam int id) {
 		ModelAndView mv = new ModelAndView();
-		if (!uc.isUserLoggedIn()) {
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 			
-			mv.setViewName("user/login");
+			mv.setViewName("teacher/index");
 			return mv;
 			}
 		
@@ -94,10 +91,11 @@ public class TeacherController {
 	//request for delete teacher
 	@GetMapping("/teacher/delete")
 	public String deleteTeacher(@RequestParam int id) {
-		if (!uc.isUserLoggedIn()) {
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 			
 			
-			return " redirect:user/login";
+			return " redirect:teacher/index";
 			}
 		dao.deleteById(id);
 		return "redirect:/teacher/index";
