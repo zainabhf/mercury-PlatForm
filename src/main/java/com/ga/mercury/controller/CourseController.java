@@ -39,21 +39,32 @@ public class CourseController {
 	
 	@Autowired
 	private UserDao userDao;
+	@Autowired
+	private UserController uc;
+
+
 	
 	// add course
 	@GetMapping("course/add")
 	public ModelAndView addCourse(){
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("course/add");
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 		
-		var te = teacherDao.findAll();
-		mv.addObject("teacher", te);
+			mv.setViewName("course/index");
+			return mv;
 		
-		HomeController hm = new HomeController();
-		hm.setAppName(mv, env);
+		}
+
 		
-		return mv;
-		
+			mv.setViewName("course/add");
+			
+			var te = teacherDao.findAll();
+			mv.addObject("teacher", te);
+			
+			HomeController hm = new HomeController();
+			hm.setAppName(mv, env);
+			return mv;
 	}
 	// adding course n data base
 	@PostMapping("course/add")
@@ -98,30 +109,24 @@ public class CourseController {
 		
 	}
 	
-//	@GetMapping("course/enroll")
-//	public ModelAndView enrollToCourse(){
-//		
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("course/enroll");
-//		
-//		Home
-//		
-//		return mv;
-//	}
+
 	
 	
 	@PostMapping("course/enroll")
 	public String addCourseToUser(@RequestParam int id) {
 		
+		if (!uc.isUserLoggedIn()) {
+			
+			return "redirect:/user/login";
+		}
 		HttpSession session = request.getSession();
 		
-//		var userId = session.getAttribute("id");
 
 		int userId = (int) session.getAttribute("userId");
 		System.err.println("User ID:"+userId);
 		User user = userDao.findById(userId);
 		Course course = courseDao.findById(id);
-		System.err.println("Course ID from param:" + id);
+		System.err.println("Course ID from param:" + course.getCourseId());
 
 		
 
@@ -134,10 +139,14 @@ public class CourseController {
 	
 	@GetMapping("course/edit")
 	public ModelAndView editcourse(@RequestParam int id) {
-
-		Course course = courseDao.findById(id);
 		
 		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("user")) {
+			mv.setViewName("course/index");
+			return mv;
+		}
+		Course course = courseDao.findById(id);
 		mv.setViewName("course/edit");
 		mv.addObject("course", course);
 		
@@ -149,10 +158,19 @@ public class CourseController {
 		
 		return mv;
 	}
+
+
 	
-	@GetMapping("/course/delete")
+	@GetMapping("course/delete")
 	public String deletecourse(@RequestParam int id) {
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
+		
+			return "redirect:course/index";
+		}
+	
+		
 		courseDao.deleteById(id);
-		return "redirect:/course/index";
+		return "redirect:course/index";
 	}
 }

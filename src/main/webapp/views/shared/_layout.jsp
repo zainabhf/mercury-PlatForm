@@ -17,9 +17,12 @@
 <a href="${appName}teacher/index">Teachers</a>
 
 <% if(session.getAttribute("user") != null){%>
+<% if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
 	<a href="${appName}course/add">add course</a>
-	<a href="${appName}user/profile?id=${user.id}">profile</a>
 	<a href="${appName}teacher/add">Add teacher</a>
+	<%} %>
+	<a href="${appName}user/profile?id=${user.id}">profile</a>
+	
 	<a href="${appName}user/logout">Logout</a>
 	
 <%}else{ %>

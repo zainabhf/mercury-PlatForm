@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
-<form action="${appName}teacher/edit" method="post">
+<form action="${appName}teacher/add" method="post">
 
 <div>
 <label> Teacher Name</label>

@@ -16,6 +16,9 @@ import com.ga.mercury.model.Teacher;
 public class TeacherController {
 	@Autowired 
 	private Environment env;
+	@Autowired 
+	private UserController uc;
+	
 	//display teacher(teacher home)
 //	@GetMapping("/teacher/home")
 //	public ModelAndView homeTeacher(@RequestParam int id) {
@@ -48,6 +51,11 @@ public class TeacherController {
 
 	public ModelAndView addTeacher() {
 		ModelAndView mv = new ModelAndView();
+	if (!uc.isUserLoggedIn()) {
+			
+		mv.setViewName("user/login");
+		return mv;
+		}
 		mv.setViewName("teacher/add");
 //		var te = dao.findAll();
 //		mv.addObject("teacher", );
@@ -65,9 +73,16 @@ public class TeacherController {
 
 	@GetMapping("/teacher/edit")
 	public ModelAndView editTeacher(@RequestParam int id) {
+		ModelAndView mv = new ModelAndView();
+		if (!uc.isUserLoggedIn()) {
+			
+			mv.setViewName("user/login");
+			return mv;
+			}
+		
 		Teacher teacher = dao.findById(id);
 		
-		ModelAndView mv = new ModelAndView();
+		
 		mv.setViewName("teacher/edit");
 		mv.addObject("teacher", teacher);
 		
@@ -79,6 +94,11 @@ public class TeacherController {
 	//request for delete teacher
 	@GetMapping("/teacher/delete")
 	public String deleteTeacher(@RequestParam int id) {
+		if (!uc.isUserLoggedIn()) {
+			
+			
+			return " redirect:user/login";
+			}
 		dao.deleteById(id);
 		return "redirect:/teacher/index";
 		
