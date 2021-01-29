@@ -19,7 +19,7 @@ Certificate: ${teacher.certificate}<br>
  
 Courses:<br> 
 <c:forEach items="${teacher.getCourses()}" var="course">
-			- ${course.courseName} 
+			 ${course.courseName} 
 	</c:forEach>
 	<hr>
 <p>

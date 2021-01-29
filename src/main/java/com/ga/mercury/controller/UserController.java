@@ -85,12 +85,12 @@ public class UserController {
 				session.setAttribute("userId", matchUser.getId());
 				session.setAttribute("userRole", matchUser.getRole());
 				session.setAttribute("message", "You're logged in sccessfully");
-				return "redirect:/";
+				return "redirect:profile";
 			}
 		}
 		
 		session.setAttribute("message", "Email or Password is Incorrect");
-		return "redirect:/user/login";
+		return "redirect:login";
 	}
 
 	
@@ -115,7 +115,7 @@ public class UserController {
 		for(User userFromBD: users) {
 			if(userFromBD.getEmailAddress().equals(user.getEmailAddress())) {
 				mv.addObject("message", "User Already Exists");
-				return "redirect:user/registeration";
+				return "redirect:user/register";
 			}
 		}
 		
@@ -144,7 +144,7 @@ public class UserController {
 		
 		userDao.save(user);
 		
-		return "redirect:edit";
+		return "user/profile";
 	}
 	
 	public boolean isUserLoggedIn() {
