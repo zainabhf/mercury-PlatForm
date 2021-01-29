@@ -1,2 +1,7 @@
 pom.xml
+<<<<<<< HEAD
 application-dev.properties
+=======
+application-dev.properties
+>>>>>>> b98cdc894aeb0e51388f2ef5d2ec1bf8c121f239
+/target/
