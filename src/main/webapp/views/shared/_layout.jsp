@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -32,5 +34,19 @@
 <%} %>
 
 </nav>
+<c:if test="${message != null}">
+
+<div class="alert alert-primary fade show" role="alert">
+${message}
+</div>
+<% session.removeAttribute("message"); %>
+</c:if>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	$('.fade').slideUp(4000);
+	</script>
+
 </body>
 </html>
