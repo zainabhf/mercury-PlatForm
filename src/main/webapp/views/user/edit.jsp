@@ -16,5 +16,6 @@
 	<input type="password" name="password" value="${user.password}"><br>
 	
 	<input type="hidden" name="id" value="${user.id}">
+	<input type="hidden" name="role" value="${user.role}">
 	<button type="submit">Submit</button><br>
 </form>
