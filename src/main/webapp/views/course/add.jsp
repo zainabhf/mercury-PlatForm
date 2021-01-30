@@ -31,7 +31,7 @@
 
 <div>
 <label>Course picture</label>
-<input type="file" name="coursePicture"  accept ="image/*">
+<input type="text" name="coursePicture">
 </div>
 
 <div>

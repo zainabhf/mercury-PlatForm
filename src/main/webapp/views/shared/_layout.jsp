@@ -7,11 +7,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<h1>${Welcome}</h1>
-
+<div>
+<a href="${appName}">
+<img alt="app icon" src="">
+<h1 class="font-effect-emboss" id="h1"> ${Welcome}</h1>
+</a>
+</div>
 <nav>
 
 <a href="${appName}">Home</a>

@@ -1,4 +1,17 @@
 @charset "ISO-8859-1";
 
+*{
+	font-family: "Raleway", sans-serif ;
+	text-decoration:none;
 
+}
+#h1{
+	color:#000091;
+	text-shadow: 2px 3px 4px gray;
+	display:inline;
+}
+
+nav{
+	background-color: #c2c2c7;
+}
 /* here add your style */
