@@ -16,16 +16,15 @@ nav{
 }
 /* here add your style */
 .course-index-continer{
-	 display:grid;
-	  grid-template-columns: auto auto auto;
-	   padding: 30px;
+	display: grid;
+    grid-template-columns: auto auto auto;
+justify-content:flex-start;
 }
 .course-card {
    width: 200px;
    height:200px;
-   padding: 20px 0;
-  
-   
+   border: 2px solid gray;
+ 
   
 }
 .course-card:hover{
