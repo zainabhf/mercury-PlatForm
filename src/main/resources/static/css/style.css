@@ -16,17 +16,19 @@ nav{
 }
 /* here add your style */
 .course-index-continer{
-	display: grid;
-    grid-template-columns: auto auto auto;
+	display: flex;
 justify-content:flex-start;
+
 }
 .course-card {
    width: 200px;
    height:200px;
-   border: 2px solid gray;
- 
+   border: 2px;
+ margin: 10px;
+ background-color: #c2c2c7;
   
 }
 .course-card:hover{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	 transform: scale(1.5);
 }
