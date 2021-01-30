@@ -20,17 +20,6 @@ public class Course {
 	private Date endtDate;
 	private String courseUrl;
 	
-
-	public String getCourseUrl() {
-		return courseUrl;
-	}
-
-
-	public void setCourseUrl(String courseUrl) {
-		this.courseUrl = courseUrl;
-	}
-
-
 	@ManyToMany
 	@JoinTable(name = "user_course",
 				joinColumns = { @JoinColumn(name = "course_id") },
@@ -122,8 +111,12 @@ public class Course {
 		this.teacher = teacher;
 	}
 	
-
+	public String getCourseUrl() {
+			return courseUrl;
+		}
 	
-	
+	public void setCourseUrl(String courseUrl) {
+		this.courseUrl = courseUrl;
+	}	
 	
 }
