@@ -121,13 +121,13 @@ public class CourseController {
 		}
 		HttpSession session = request.getSession();
 		
-
 		int userId = (int) session.getAttribute("userId");
-
+		
 		User user = userDao.findById(userId);
 		Course course = courseDao.findById(id);
-
-		user.setCourses(course);
+		
+		course.getUsers().add(user);
+		userDao.save(user);
 		
 		return "redirect:index";
 	}

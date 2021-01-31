@@ -7,15 +7,15 @@
 
 	<div class="form-group">
 		<label>E-mail Address</label>
-		<input type="email" name="emailAddress" class="form-control">
+		<input class="form-control" type="email" name="emailAddress" class="form-control">
 		
 	</div>
 	
 	<div class="form-group">
 		<label>Password</label>
-		<input type="password" name="password" class="form-control">
+		<input class="form-control" type="password" name="password" class="form-control">
 	</div>
 
 
-	<button type="submit">Submit</button>
+	<button class="btn btn-primary" type="submit">Submit</button>
 </form>
