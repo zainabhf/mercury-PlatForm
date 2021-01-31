@@ -84,6 +84,7 @@ public class UserController {
 				session.setAttribute("user", matchUser);
 				session.setAttribute("userId", matchUser.getId());
 				session.setAttribute("userRole", matchUser.getRole());
+				session.setAttribute("userCourse", matchUser.getCourses());
 				session.setAttribute("message", "You're logged in sccessfully");
 				return "redirect:profile?id="+matchUser.getId();
 			}
