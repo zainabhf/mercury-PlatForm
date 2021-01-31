@@ -1,6 +1,12 @@
 *{
 	font-family: "Raleway", sans-serif ;
 	text-decoration:none;
+<<<<<<< HEAD
+=======
+margin: 5px;
+padding: 5px;
+
+>>>>>>> 3fd74cc8bee929652236b29a4d0f0200a4488448
 }
 
 
@@ -10,8 +16,8 @@
 	display:inline;
 }
 
-nav{
-	background-color: #c2c2c7;
+#nav{
+padding:5px;
 }
 
 
@@ -51,6 +57,7 @@ nav{
   	left: 10px;
 }
 .header-h{
+<<<<<<< HEAD
   	position: relative;
   	top: 20px;
   	left: 30px;
@@ -73,3 +80,14 @@ a{
 }
 
 
+=======
+  position: relative;
+  top: 20px;
+  left: 30px;
+}
+.float-right{
+	text-aling:right;
+float: right;
+	
+}
+>>>>>>> 3fd74cc8bee929652236b29a4d0f0200a4488448
