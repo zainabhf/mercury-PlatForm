@@ -20,6 +20,8 @@ public class Teacher {
 		
 		private String emailAddress;
 		private String certificate;
+		
+		private String teacherPic;
 
 		
 		@OneToMany(mappedBy="teacher")
@@ -63,6 +65,14 @@ public class Teacher {
 
 		public void setCourses(Set<Course> courses) {
 			this.courses = courses;
+		}
+
+		public String getTeacherPic() {
+			return teacherPic;
+		}
+
+		public void setTeacherPic(String teacherPic) {
+			this.teacherPic = teacherPic;
 		}
 	
 }
