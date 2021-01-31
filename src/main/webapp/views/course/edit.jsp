@@ -6,38 +6,38 @@
 
 <form action="${appName}course/add" method="post">
 
-<div>
+<div class="form-group">
 <label> Course Name</label>
-<input type="text" name="courseName" value ="${course.courseName}">
+<input type="text" name="courseName" value ="${course.courseName}" class="form-control">
 </div>
 
-
-
-<div>
-<label> Description</label>
-<input type="text" name="courseDescreption" value ="${course.courseDescreption}" >
-</div>
-<div>
-<label> Start At</label>
-<input type="date" name="startDate" value ="${course.startDate}">
+<div class="form-group">
+<label>Description</label>
+<input type="text" name="courseDescreption" value ="${course.courseDescreption}" class="form-control">
 </div>
 
 <div>
-<label> End At</label>
-<input type="date" name="endtDate" value ="${course.endtDate}">
+<label>Start At</label>
+<input type="date" name="startDate" value ="${course.startDate}" class="form-control">
 </div>
 
-<div>
-<label> Course Link</label>
-<input type="text" name="courseUrl" value ="${course.courseUrl}">
+<div class="form-group">
+<label>End At</label>
+<input type="date" name="endtDate" value ="${course.endtDate}" class="form-control">
 </div>
-<div>
+
+<div class="form-group">
+<label>Course Link</label>
+<input type="text" name="courseUrl" value ="${course.courseUrl}" class="form-control">
+</div>
+
+<div class="form-group">
 <label>Course picture</label>
-<input type="text" name="coursePicture" value ="${course.coursePicture}">
+<input type="text" name="coursePicture" value ="${course.coursePicture}" class="form-control">
 </div>
-<div>
-<label>Teaching By </label>
-		<select name="teacher">
+<div class="form-group">
+<label>Teaching By</label>
+		<select name="teacher" class="form-control">
 			<c:forEach items="${teacher}" var="teacher">
 				<option value="${teacher.id}"> ${teacher.teacherName} </option>
 			</c:forEach>	
@@ -47,5 +47,5 @@
 
 	<input type="hidden" name="courseId" value="${course.courseId}">
 
-	<button type="submit">Submit</button>
+	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
