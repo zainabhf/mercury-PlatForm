@@ -9,7 +9,7 @@
 <c:forEach items="${courses}" var="course">
 <a href="${appName}course/detail?id=${course.courseId}">
 <div class="course-card">
-<img alt="course pic" src="" style="width:100%">
+<img alt="course pic" src="${course.coursePicture}" style="width:100%">
 
 <h4>	Course Name: ${course.courseName}  </h4><br>
 	Description: ${course.courseDescreption}<br>
