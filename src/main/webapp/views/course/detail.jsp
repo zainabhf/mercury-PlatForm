@@ -5,7 +5,7 @@
 
 
 <div>
-	<img src="${course.coursePicture}">
+	<img src="imges/${course.coursePicture}">
 	<p>
 	<b>Course:${course.courseName}</b><br>
 	Descreption: ${course.courseDescreption}<br>
@@ -30,5 +30,3 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
     </iframe>
-
-

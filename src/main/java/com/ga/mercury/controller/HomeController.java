@@ -30,7 +30,7 @@ public class HomeController {
 	public ModelAndView setAppName(ModelAndView mv, @Autowired Environment env) {
 		String appName = env.getProperty("app.name");
 		mv.addObject("appName", appName);
-		mv.addObject("Welcome", "Welcome to Mercury PlatForm");
+		mv.addObject("Welcome", " Mercury PlatForm");
 		
 		return mv;
 	}
