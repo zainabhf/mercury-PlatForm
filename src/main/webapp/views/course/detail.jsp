@@ -2,18 +2,14 @@
     pageEncoding="ISO-8859-1"%>
     <jsp:include page="../shared/_layout.jsp" />
 
-
-<<<<<<< HEAD
 <div>
 	<img src="imges/${course.coursePicture}">
-	
 	<b>Course:${course.courseName}</b><br>
 	Descreption: ${course.courseDescreption}<br>
 	Teaching by: ${course.teacher.teacherName}<br>
 	Start Date: ${course.startDate}<br>
 	End Date: ${course.endtDate}<br>
 	</p>
-=======
 <div class="course-header">
  	<img alt="course pic" src="${course.coursePicture}" class="header-img">
  	<h2 class="header-h">${course.courseName}</h2>
