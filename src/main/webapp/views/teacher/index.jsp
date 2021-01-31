@@ -6,9 +6,9 @@
 
 <c:forEach items="${teachers}" var="teacher">
 <p>
-Teachers's Name: ${teacher.teacherName}<br>
-Email Address: ${teacher.emailAddress}<br>
-Certificate: ${teacher.certificate}<br>
+<div>Teachers's Name: ${teacher.teacherName}<br></div>
+<div>Email Address: ${teacher.emailAddress}<br></div>
+<div>Certificate: ${teacher.certificate}<br></div>
 
 <%if(session.getAttribute("user") != null){%>
 <%if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
