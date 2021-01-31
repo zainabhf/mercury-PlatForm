@@ -36,8 +36,7 @@ public class UserController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		HomeController hc = new HomeController();
-		hc.setAppName(mv, env);
+		
 		
 		if(isUserLoggedIn()) {
 
@@ -50,7 +49,8 @@ public class UserController {
 		}else {
 			mv.setViewName("user/login");
 		}
-		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
 		return mv;
 	}
 	
@@ -85,12 +85,12 @@ public class UserController {
 				session.setAttribute("userId", matchUser.getId());
 				session.setAttribute("userRole", matchUser.getRole());
 				session.setAttribute("message", "You're logged in sccessfully");
-				return "redirect:/";
+				return "redirect:profile?id="+matchUser.getId();
 			}
 		}
 		
 		session.setAttribute("message", "Email or Password is Incorrect");
-		return "redirect:/user/login";
+		return "redirect:login";
 	}
 
 	
@@ -115,7 +115,7 @@ public class UserController {
 		for(User userFromBD: users) {
 			if(userFromBD.getEmailAddress().equals(user.getEmailAddress())) {
 				mv.addObject("message", "User Already Exists");
-				return "redirect:user/registeration";
+				return "redirect:register";
 			}
 		}
 		
@@ -144,7 +144,7 @@ public class UserController {
 		
 		userDao.save(user);
 		
-		return "redirect:edit";
+		return "redirect:profile?id="+user.getId();
 	}
 	
 	public boolean isUserLoggedIn() {

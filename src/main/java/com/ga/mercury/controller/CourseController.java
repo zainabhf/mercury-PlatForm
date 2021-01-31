@@ -117,18 +117,15 @@ public class CourseController {
 		
 		if (!uc.isUserLoggedIn()) {
 			
-			return "redirect:/user/login";
+			return "redirect:login";
 		}
 		HttpSession session = request.getSession();
 		
 
 		int userId = (int) session.getAttribute("userId");
-		System.err.println("User ID:"+userId);
+
 		User user = userDao.findById(userId);
 		Course course = courseDao.findById(id);
-		System.err.println("Course ID from param:" + course.getCourseId());
-
-		
 
 		user.setCourses(course);
 		
@@ -171,6 +168,6 @@ public class CourseController {
 	
 		
 		courseDao.deleteById(id);
-		return "redirect:course/index";
+		return "redirect:index";
 	}
 }
