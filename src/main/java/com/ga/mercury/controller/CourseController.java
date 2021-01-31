@@ -168,6 +168,6 @@ public class CourseController {
 	
 		
 		courseDao.deleteById(id);
-		return "redirect:course/index";
+		return "redirect:index";
 	}
 }
