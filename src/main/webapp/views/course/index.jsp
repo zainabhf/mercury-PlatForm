@@ -6,15 +6,20 @@
 
 
 	<c:forEach items="${courses}" var="course">
-	 <div class="card"  >
+	<div class="row">
+  <div class="col-sm-6">
+	 <div class="card" style="width: 18rem;">
 		<a href="${appName}course/detail?id=${course.courseId}">	
-		<img class="card-img-top" alt="${course.courseName}" src="${course.coursePicture}"  >
+		   <img class="card-img-top" alt="${course.courseName}" src="${course.coursePicture}" >
 		 <div class="card-body">
-	 	<h5 class="card-title" >${course.courseName}</h5>
+	 	 <h5 class="card-title">${course.courseName}</h5>
 	 	</div>
 	 	</a>
 	 	</div>
+	 	</div>
+	 	</div>
+	 
+	 
 
-		
 	</c:forEach>
 
