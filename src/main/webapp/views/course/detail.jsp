@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../shared/_layout.jsp" />
-
 <%-- 
 <div class="course-header">
  	<img alt="course pic" src="${course.coursePicture}" class="header-img">
@@ -33,7 +32,6 @@
 		<a href="${appName}course/delete?id=${course.courseId}" class="btn btn-danger">Delete</a><br>
 	<%}} %>
 </div> --%>
-
 <div>
 	<% if(session.getAttribute("user") != null){%>
 	<%boolean flag = true; %>
@@ -84,6 +82,3 @@
 			<h5>End Date: </h5>${course.endtDate}<br><br>
 		<%} %>
 </div>
-
-
-
