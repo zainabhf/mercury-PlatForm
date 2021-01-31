@@ -33,7 +33,7 @@
 </div>
 <div>
 <label>Course picture</label>
-<input type="text" name="coursePicture" value ="${course.coursePictur}">
+<input type="text" name="coursePicture" value ="${course.coursePicture}">
 </div>
 <div>
 <label>Teaching By </label>
