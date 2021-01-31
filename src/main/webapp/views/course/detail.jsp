@@ -5,7 +5,7 @@
 
 <div>
 	<img src="imges/${course.coursePicture}">
-	<p>
+	
 	<b>Course:${course.courseName}</b><br>
 	Descreption: ${course.courseDescreption}<br>
 	Teaching by: ${course.teacher.teacherName}<br>
