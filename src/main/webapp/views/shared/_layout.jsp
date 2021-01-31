@@ -33,13 +33,11 @@
 	<a href="${appName}teacher/add">Add teacher</a>
 	<%} %>
 	<a href="${appName}user/profile?id=${user.id}">profile</a>
-	
 	<a href="${appName}user/logout">Logout</a>
 	
 <%}else{ %>
 	<a href="${appName}user/login">login</a>
 	<a href="${appName}user/register">register</a>
-	
 <%} %>
 
 </nav>
