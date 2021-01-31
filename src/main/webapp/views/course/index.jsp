@@ -8,10 +8,10 @@
 
 <c:forEach items="${courses}" var="course">
 <div class="course-card">
-<img alt="course pic" src="" style="width:100%">
+<img alt="course pic" src="imges/mer.jpg" style="width:100%">
 
-<h4>	Course Name: <a href="${appName}course/detail?id=${course.courseId}">${course.courseName}</a>  </h4><br>
-	Description: ${course.courseDescreption}<br>
+<h6>	Course Name: <a href="${appName}course/detail?id=${course.courseId}">${course.courseName}</a> </h6><br>
+<p>	 Description: ${course.courseDescreption} <br>  </p>
 	<%if(session.getAttribute("user") != null){%>
 	<% if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
 
