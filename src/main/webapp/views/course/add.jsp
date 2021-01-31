@@ -3,45 +3,44 @@
 <jsp:include page="../shared/_layout.jsp" />
 
 <form action="${appName}course/add" method="post">
-<div>
+<div class="form-group">
 <label> Course Name</label>
-<input type="text" name="courseName">
+<input type="text" name="courseName" class="form-control">
 </div>
 
-
-
-<div>
+<div class="form-group">
 <label> Description</label>
-<input type="text" name="courseDescreption">
+<input type="text" name="courseDescreption" class="form-control">
 </div>
-<div>
+
+<div class="form-group">
 <label> Start At</label>
-<input type="date" name="startDate">
+<input type="date" name="startDate" class="form-control">
 </div>
 
-<div>
+<div class="form-group">
 <label> End At</label>
-<input type="date" name="endtDate">
+<input type="date" name="endtDate" class="form-control">
 </div>
 
-<div>
+<div class="form-group">
 <label> Course Link</label>
-<input type="text" name="courseUrl">
+<input type="text" name="courseUrl" class="form-control">
 </div>
 
-<div>
+<div class="form-group">
 <label>Course picture</label>
-<input type="text" name="coursePicture">
+<input type="text" name="coursePicture" class="form-control">
 </div>
 
-<div>
+<div class="form-group">
 <label>Teaching By </label>
-		<select name="teacher">
+		<select name="teacher" class="form-control">
 			<c:forEach items="${teacher}" var="teacher">
 				<option value="${teacher.id}"> ${teacher.teacherName} </option>
 			</c:forEach>	
 		</select>
 	</div>
 
-	<button type="submit" >Submit</button>
+	<button type="submit" class="btn btn-primary" >Submit</button>
 </form>
