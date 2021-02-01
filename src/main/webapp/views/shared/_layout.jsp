@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 <div>
@@ -61,6 +62,16 @@ ${message}
 <script type="text/javascript">
 	$('.fade').slideUp(4000);
 	</script>
+
+<footer class ="footer">
+CopyRight2021 
+  <a href="atheer@mercury.com">ATHEER</a>
+  <a href="Moudi@mercury.com">MOUDI</a>
+  <a href="ghosoon@mercury.com">GHOSOON</a>
+  <a href="zainab@mercury.com">ZAINAB</a>
+</footer>
+
+
 
 </body>
 </html>
