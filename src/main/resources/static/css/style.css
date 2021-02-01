@@ -36,15 +36,7 @@
 .course-title{
 	font-size: 15px;
 }
-.header-img {
-  	float: left;
-  	width: 100px;
-  	height: 100px;
-   	border-radius:50%;
-    position: relative;
-  	top: 18px;
-  	left: 10px;
-}
+
 .header-h{
   	position: relative;
   	top: 20px;
@@ -133,13 +125,6 @@ a{
     text-decoration: none;
 }
 
-
-.course-header{
-	overflow: hidden;
-  	padding: 20px 10px;
-   	margin-left: 10px;
-}
-
 .course-title{
 	font-size: 15px;
 }
@@ -179,3 +164,5 @@ nav{
 .nav-link:hover {
  background-color:#dcd8d8;
 }
+
+        
