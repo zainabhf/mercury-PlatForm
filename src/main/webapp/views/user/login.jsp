@@ -1,6 +1,4 @@
 <jsp:include page="../shared/_layout.jsp" />
-
-
 <b style="color: red;">${message}</b>
 
 <form action="${appName}user/login" method="post" class="form-control">
@@ -19,3 +17,5 @@
 
 	<button class="btn btn-primary" type="submit">Submit</button>
 </form>
+
+
