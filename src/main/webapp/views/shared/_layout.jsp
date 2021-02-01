@@ -64,7 +64,7 @@ ${message}
 	</script>
 
 <footer class ="footer">
-CopyRight2021 
+CopyRight2021 :
   <a href="atheer@mercury.com">ATHEER</a>
   <a href="Moudi@mercury.com">MOUDI</a>
   <a href="ghosoon@mercury.com">GHOSOON</a>
