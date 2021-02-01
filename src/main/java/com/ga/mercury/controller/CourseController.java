@@ -96,14 +96,25 @@ public class CourseController {
 	//details
 	@GetMapping("/course/detail")
 	public ModelAndView courseDetails(@RequestParam int id) {
+				
 		Course course = courseDao.findById(id);
 
 		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+
+		
 		mv.setViewName("course/detail");
 		mv.addObject("course", course);
 		
-		HomeController hm = new HomeController();
-		hm.setAppName(mv, env);
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+		if(uc.isUserLoggedIn()) {
+		int userId = (int) session.getAttribute("userId");
+		User user = userDao.findById(userId);
+		mv.addObject("user", user);
+		}
+		
 		
 		return mv;
 		
@@ -129,7 +140,7 @@ public class CourseController {
 		course.getUsers().add(user);
 		userDao.save(user);
 		
-		return "redirect:index";
+		return "redirect:detail?id=" + course.getCourseId();
 	}
 	
 	
@@ -146,6 +157,7 @@ public class CourseController {
 		Course course = courseDao.findById(id);
 		mv.setViewName("course/edit");
 		mv.addObject("course", course);
+
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);

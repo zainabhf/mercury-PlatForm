@@ -3,19 +3,23 @@
     pageEncoding="ISO-8859-1"%>
 <jsp:include page="../shared/_layout.jsp" />
 
-<div class="course-index-continer">
 
 
-<c:forEach items="${courses}" var="course">
-<a href="${appName}course/detail?id=${course.courseId}">
-<div class="course-card">
-<img alt="course pic" src="${course.coursePicture}" style="width:100%">
+	<c:forEach items="${courses}" var="course">
+	<div class="row">
+  <div class="col-sm-6">
+	 <div class="card" style="width: 18rem;">
+		<a href="${appName}course/detail?id=${course.courseId}">	
+		   <img class="card-img-top" alt="${course.courseName}" src="${course.coursePicture}" >
+		 <div class="card-body">
+	 	 <h5 class="card-title">${course.courseName}</h5>
+	 	</div>
+	 	</a>
+	 	</div>
+	 	</div>
+	 	</div>
+	 
+	 
 
-<h4>	Course Name: ${course.courseName}  </h4><br>
-	Description: ${course.courseDescreption}<br>
-	</div>
-	</a>
-</c:forEach>
+	</c:forEach>
 
-
-</div>

@@ -25,72 +25,61 @@
 						</div>
 					</div>
 				</div>
-<div class="profile p-2">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 d-flex justify-content-between">
-				<span>${user.fullName}</span>
-				 <span class="mdi mdi-account" title="name" style="color: #ff5722;"></span>
+				<div class="profile p-2">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 d-flex justify-content-between">
+								<span>${user.fullName}</span> <span class="mdi mdi-account"
+									title="name" style="color: #ff5722;"></span>
+							</div>
+							<div class="col-12 d-flex justify-content-between">
+								<span>${user.gender}</span> <span class="mdi mdi-map-marker"
+									title="gender" style="color: #ffc107;"></span>
+							</div>
+							<div class="col-12 d-flex justify-content-between">
+								<span>${user.emailAddress} </span> <span
+									class="mdi mdi-badge-account" title="emailAddress"
+									style="color: #8bc34a;"></span>
+							</div>
+							<c:forEach items="${user.getCourses()}" var="course"> ${course.courseName}<br>
+							</c:forEach>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<h2>Courses progress</h2>
+					<p>Database & SQL</p>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" role="progressbar"
+							aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+							style="width: 40%">40% Complete (success)</div>
+					</div>
+					<p>Introduction to Algorithms</p>
+					<div class="progress">
+						<div class="progress-bar progress-bar-info" role="progressbar"
+							aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+							style="width: 50%">50% Complete (info)</div>
+					</div>
+					<p>Introduction to Javascript for Beginners
+					<p>
+					<div class="progress">
+						<div class="progress-bar progress-bar-warning" role="progressbar"
+							aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+							style="width: 60%">60% Complete (warning)</div>
+					</div>
+					<P>Network Security
+					<p>
+					<div class="progress">
+						<div class="progress-bar progress-bar-danger" role="progressbar"
+							aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+							style="width: 70%">70% Complete (danger)</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-12 d-flex justify-content-between">
-				<span>${user.gender}</span> 
-				<span class="mdi mdi-map-marker" title="gender" style="color: #ffc107;"></span>
-			</div>
-			<div class="col-12 d-flex justify-content-between">
-				<span>${user.emailAddress} </span> 
-				<span class="mdi mdi-badge-account" title="emailAddress" style="color: #8bc34a;"></span>
-			</div>
-			<c:forEach items="${user.getCourses()}" var="course"> ${course.courseName}<br>
-			</c:forEach>
+
 		</div>
+
 	</div>
 </div>
-  <div class="container">
-  <h2>Courses progress</h2>
-  <p>Database & SQL</p> 
-  <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-      40% Complete (success)
-    </div>
-  </div>
-  <p>Introduction to Algorithms</p> 
-  <div class="progress">
-    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-      50% Complete (info)
-    </div>
-  </div>
-  <p>Introduction to Javascript for Beginners<p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-      60% Complete (warning)
-    </div>
-  </div>
-  <P>Network Security<p>
-  <div class="progress">
-    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      70% Complete (danger)
-    </div>
-  </div>
-</div>
-    </div>
-
-   </div>
-
-  </div>
-  </div>
-
-<!--  
- ${user.gender} <br>
- ${user.emailAddress} <br>
-
- 
- <c:forEach items="${user.getCourses()}" var="course">
-  ${course.courseName}<br>
- </c:forEach>
-</p></div>
- -->
-
-
-
 
 
