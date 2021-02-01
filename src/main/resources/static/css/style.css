@@ -36,6 +36,7 @@
 .course-title{
 	font-size: 15px;
 }
+
 .header-img {
   	width: 80px;
   	height: 150px;
@@ -130,13 +131,6 @@ body {
 a{
     color: #6c757d;
     text-decoration: none;
-}
-
-
-.course-header{
-	overflow: hidden;
-  	padding: 20px 10px;
-   	margin-left: 10px;
 }
 
 .course-title{
@@ -238,6 +232,7 @@ nav{
 	font-size: 20px;
 	color:#727272;
 }
+
 
 .Center { 
     width:500px; 
