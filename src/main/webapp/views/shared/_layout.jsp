@@ -24,23 +24,23 @@
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
 
 <div class="navbar-header">
-<a href="${appName}" class="navbar-brand">Home</a>
-<a href="${appName}course/index" class="navbar-brand">courses</a>
-<a href="${appName}teacher/index"class="navbar-brand">Teachers</a>
+<a href="${appName}" class="navbar-brand nav-color">Home</a>
+<a href="${appName}course/index" class="navbar-brand nav-color">courses</a>
+<a href="${appName}teacher/index"class="navbar-brand nav-color">Teachers</a>
 
 <% if(session.getAttribute("user") != null){%>
 <% if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
-	<a href="${appName}course/add"class="navbar-brand">add Course</a>
-	<a href="${appName}teacher/add"class="navbar-brand">Add Teacher</a>
+	<a href="${appName}course/add"class="navbar-brand nav-color">add Course</a>
+	<a href="${appName}teacher/add"class="navbar-brand nav-color">Add Teacher</a>
 	<%} %> 
 	<div style="position: absolute; right: 0; top :0;">
-	<a href="${appName}user/profile?id=${user.id}" class="navbar-brand">Profile</a>
-	<a href="${appName}user/logout" class="navbar-brand ">Logout</a>
+	<a href="${appName}user/profile?id=${user.id}" class="navbar-brand nav-color">Profile</a>
+	<a href="${appName}user/logout" class="navbar-brand nav-color">Logout</a>
 	</div>
 <%}else{ %>
 <div style="position: absolute; right: 0; top :0;">
-	<a href="${appName}user/login" class="navbar-brand ">login</a>
-	<a href="${appName}user/register"class="navbar-brand " >Sign-up</a>
+	<a href="${appName}user/login" class="navbar-brand nav-color">login</a>
+	<a href="${appName}user/register"class="navbar-brand nav-color" >Sign-up</a>
 </div>
 
 	
