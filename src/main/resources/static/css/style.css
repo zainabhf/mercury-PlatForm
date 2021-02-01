@@ -195,6 +195,28 @@ nav{
 }
 
 #landing-page{
-	width: 100wv;
+	width: 90%;
+	margin: 0 auto;
 	height: 100%
+}
+
+.img-container{
+	text-align: center;
+}
+
+.icon{
+	width: 70px;
+	height: 70px;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+#text-above{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    z-index: 1;
+    color: white;
+    font-size: 30px;
+    font-family: 'Yusei Magic';
 }

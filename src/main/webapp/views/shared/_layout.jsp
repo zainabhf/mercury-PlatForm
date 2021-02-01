@@ -11,15 +11,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="css/style.css">
-
+<link rel="icon" href="../imges/mercury_logo_white.png" type="image/icon">
+<title>Mercury Platform</title>
 </head>
 <body>
 
 <div>
 <a href="${appName}">
-<img alt="app icon" src="">
+<img alt="app icon" src="imges/mercury_logo.png" class="icon">
 <h1 class="font-effect-emboss" id="h1"> ${Welcome}</h1>
 </a>
 </div>
@@ -38,7 +43,7 @@
 	<a href="${appName}user/logout" class="nav-link">Logout</a>
 	</div>
 <%}else{ %>
-<div style="position: absolute; right: 0; top :90px;">
+<div style="position: absolute; right: 0; top :110px;">
 	<a href="${appName}user/login" class="nav-link">Login</a>
 	<a href="${appName}user/register"class="nav-link" >Sign-up</a>
 </div>
