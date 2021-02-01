@@ -71,3 +71,12 @@ a{
 float: right;
 	
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f6f5f5;
+  color: black;
+  text-align: center;
+}

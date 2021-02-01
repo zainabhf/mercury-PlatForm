@@ -7,6 +7,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- add the fotter contact -->
+
+
+
+
+<footer class ="footer">
+  <a href="atheer@mercury.com">ATHEER</a></p>
+  <a href="Moudi@mercury.com">MOUDI</a></p>
+  <a href="ghosoon@mercury.com">GHOSOON</a></p>
+  <a href="zainab@mercury.com">ZAINAB</a></p>
+</footer>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
