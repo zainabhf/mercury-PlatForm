@@ -44,10 +44,12 @@ public class UserController {
 			
 			User user = userDao.findById(id);
 			mv.addObject("user", user);
-			
+			mv.addObject("message", "Logged in successfully");
 			
 		}else {
 			mv.setViewName("user/login");
+			mv.addObject("message", "Email or password is incorrect");
+
 		}
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
