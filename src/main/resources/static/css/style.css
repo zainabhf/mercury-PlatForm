@@ -4,12 +4,25 @@
 	text-decoration:none;
 	margin: 5px;
 	padding: 5px;
+	list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'quicksand', tahoma;
+    text-decoration: none;
 }
 #h1{
 	color:#000091;
 	text-shadow: 2px 3px 4px gray;
 	display:inline;
 }
+.mycontainer{
+	display: flex;
+	flex-direction: row;
+	
+}
+
 .card:hover{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	transform: scale(1);
@@ -24,15 +37,7 @@
 .course-title{
 	font-size: 15px;
 }
-.header-img {
-  	float: left;
-  	width: 100px;
-  	height: 100px;
-   	border-radius:50%;
-    position: relative;
-  	top: 18px;
-  	left: 10px;
-}
+
 .header-h{
   	position: relative;
   	top: 20px;
@@ -42,6 +47,7 @@
 	left: 30px;
   
 }
+
 /*Atheer CSS - user profile page*/
 * {
     padding: 0;
@@ -125,13 +131,6 @@ a{
     text-decoration: none;
 }
 
-
-.course-header{
-	overflow: hidden;
-  	padding: 20px 10px;
-   	margin-left: 10px;
-}
-
 .course-title{
 	font-size: 15px;
 }
@@ -140,14 +139,32 @@ a{
 text-aling:right;
 float: right;
 }
+nav{
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#dddddd;
+ 
+}
+.nav-link {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:20px;
+}
+.nav-link:hover {
+ background-color:#dcd8d8;
+}
+
 /*Atheer CSS - user login page - Start code*/
 .user-page-login{
-display: flex;
-position: absolute;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #eceffc;
+ 
+ 
+  
+ 
 }
 
 .btn {
@@ -155,7 +172,7 @@ position: absolute;
   border-radius: 0;
   overflow: hidden;
 }
-.form-group {
+.div-loginForm {
   --input-default-border-color: white;
   --input-border-bottom-color: white;
 }
@@ -183,3 +200,13 @@ position: absolute;
     width: 100%;
     margin: 18px 0 9px 0;
   }
+
+.footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#e3e1e1;
+  color: black;
+  text-align: center;
+}
