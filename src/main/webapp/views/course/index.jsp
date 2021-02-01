@@ -5,9 +5,9 @@
 
 
 <div class="row">
- 
+  <div class="col-sm-6">
 	<c:forEach items="${courses}" var="course">
-	 <div class="col-sm-6">
+	
 	 <div class="card" style="width: 18rem;">
 		<a href="${appName}course/detail?id=${course.courseId}">	
 		   <img class="card-img-top" alt="${course.courseName}" src="${course.coursePicture}" >
@@ -16,7 +16,7 @@
 	 	</div>
 	 	</a>
 	 	</div>
-	 	</div>
+	 	
 	</c:forEach>
 	</div>
-	 
+	 </div>
