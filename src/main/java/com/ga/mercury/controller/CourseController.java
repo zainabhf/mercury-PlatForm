@@ -19,11 +19,6 @@ import com.ga.mercury.model.User;
 
 @Controller
 public class CourseController {
-//course has 1-m with teacherDao
-	// m-m with user student
-	// admin can add and delete the course
-
-	
 	
 	@Autowired
 	private TeacherDao teacherDao;
@@ -39,6 +34,7 @@ public class CourseController {
 	
 	@Autowired
 	private UserDao userDao;
+	
 	@Autowired
 	private UserController uc;
 
@@ -52,6 +48,7 @@ public class CourseController {
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 		
 			mv.setViewName("course/index");
+			mv.addObject("message", "You can't add course");
 			return mv;
 		
 		}
@@ -70,8 +67,9 @@ public class CourseController {
 	@PostMapping("course/add")
 	public String addCourse(Course courses) {
 
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("message", "Course have been added successfully");
 		courseDao.save(courses);
-
 
 		return "redirect:/course/index";
 	}
@@ -126,8 +124,10 @@ public class CourseController {
 	@PostMapping("course/enroll")
 	public String addCourseToUser(@RequestParam int id) {
 		
+		ModelAndView mv = new ModelAndView();
+		
 		if (!uc.isUserLoggedIn()) {
-			
+			mv.addObject("message", "You have to login to enroll to this course");
 			return "redirect:login";
 		}
 		HttpSession session = request.getSession();
@@ -140,6 +140,8 @@ public class CourseController {
 		course.getUsers().add(user);
 		userDao.save(user);
 		
+		mv.addObject("message", "You have enrolled to course successfully");
+		
 		return "redirect:detail?id=" + course.getCourseId();
 	}
 	
@@ -151,6 +153,7 @@ public class CourseController {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("user")) {
+			mv.addObject("message", "Only admin can do that");
 			mv.setViewName("course/index");
 			return mv;
 		}
@@ -173,12 +176,13 @@ public class CourseController {
 	@GetMapping("course/delete")
 	public String deletecourse(@RequestParam int id) {
 		HttpSession session = request.getSession();
+		ModelAndView mv = new ModelAndView();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
-		
+			mv.addObject("message", "Only admin can do that");
 			return "redirect:course/index";
 		}
 	
-		
+		mv.addObject("message", "Course have been deleted successfully");
 		courseDao.deleteById(id);
 		return "redirect:index";
 	}
