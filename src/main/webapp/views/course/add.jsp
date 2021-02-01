@@ -2,6 +2,7 @@
 
 <jsp:include page="../shared/_layout.jsp" />
 
+
 <c:if test="${message != null}">
 
 <div class="alert alert-primary fade show" role="alert">

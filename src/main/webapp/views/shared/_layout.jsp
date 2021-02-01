@@ -13,47 +13,49 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
+
 <div>
 <a href="${appName}">
 <img alt="app icon" src="">
 <h1 class="font-effect-emboss" id="h1"> ${Welcome}</h1>
 </a>
 </div>
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-
+<nav>
 <div class="navbar-header">
-<a href="${appName}" class="navbar-brand nav-color">Home</a>
-<a href="${appName}course/index" class="navbar-brand nav-color">courses</a>
-<a href="${appName}teacher/index"class="navbar-brand nav-color">Teachers</a>
-
+<a href="${appName}" class="nav-link">Home</a>
+<a href="${appName}course/index" class="nav-link">Courses</a>
+<a href="${appName}teacher/index"class="nav-link">Teachers</a>
 <% if(session.getAttribute("user") != null){%>
 <% if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
-	<a href="${appName}course/add"class="navbar-brand nav-color">add Course</a>
-	<a href="${appName}teacher/add"class="navbar-brand nav-color">Add Teacher</a>
+	<a href="${appName}course/add"class="nav-link">Add Course</a>
+	<a href="${appName}teacher/add"class="nav-link">Add Teacher</a>
 	<%} %> 
-	<div style="position: absolute; right: 0; top :0;">
-	<a href="${appName}user/profile?id=${user.id}" class="navbar-brand nav-color">Profile</a>
-	<a href="${appName}user/logout" class="navbar-brand nav-color">Logout</a>
+	<div style="position: absolute; right: 0; top :90px;">
+	<a href="${appName}user/profile?id=${user.id}" class="nav-link">Profile</a>
+	<a href="${appName}user/logout" class="nav-link">Logout</a>
 	</div>
 <%}else{ %>
-<div style="position: absolute; right: 0; top :0;">
-	<a href="${appName}user/login" class="navbar-brand nav-color">login</a>
-	<a href="${appName}user/register"class="navbar-brand nav-color" >Sign-up</a>
+<div style="position: absolute; right: 0; top :90px;">
+	<a href="${appName}user/login" class="nav-link">Login</a>
+	<a href="${appName}user/register"class="nav-link" >Sign-up</a>
 </div>
-
 	
 <%} %>
-
 </div>
 </nav>
+
 <c:if test="${message != null}">
+
 <div class="alert alert-primary fade show" role="alert">
 ${message}
 </div>
 <% session.removeAttribute("message"); %>
-</c:if>
+<
+</c:if> 
+
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
