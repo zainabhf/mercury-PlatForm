@@ -13,7 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ga.mercury.dao.CourseDao;
 import com.ga.mercury.dao.TeacherDao;
+import com.ga.mercury.model.Course;
 import com.ga.mercury.model.Teacher;
+import com.ga.mercury.model.User;
 
 @Controller
 public class TeacherController {
@@ -100,6 +102,27 @@ public class TeacherController {
 		dao.deleteById(id);
 		return "redirect:/teacher/index";
 		
+		
+	}
+	@GetMapping("/teacher/details")
+	public ModelAndView courseDetails(@RequestParam int id) {
+				
+		Teacher teacher = dao.findById(id);
+
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+
+		
+		mv.setViewName("teacher/details");
+		mv.addObject("teacher", teacher);
+		
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		
+	
+		
+		
+		return mv;
 		
 	}
 	}
