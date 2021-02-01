@@ -53,3 +53,5 @@ ${message}
 
 	<button type="submit" class="btn btn-primary" >Submit</button>
 </form>
+
+<script src="js/main.js"></script>

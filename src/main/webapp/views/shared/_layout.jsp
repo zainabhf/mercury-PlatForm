@@ -40,7 +40,7 @@
 <%}else{ %>
 <div style="position: absolute; right: 0; top :0;">
 	<a href="${appName}user/login" class="navbar-brand ">login</a>
-	<a href="${appName}user/register"class="navbar-brand " >Registration</a>
+	<a href="${appName}user/register"class="navbar-brand " >Sign-up</a>
 </div>
 
 	
@@ -48,13 +48,12 @@
 
 </div>
 </nav>
-<%-- <c:if test="${message != null}">
-
+<c:if test="${message != null}">
 <div class="alert alert-primary fade show" role="alert">
 ${message}
 </div>
 <% session.removeAttribute("message"); %>
-</c:if> --%>
+</c:if>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
