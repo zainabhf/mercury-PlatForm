@@ -1,6 +1,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page="../shared/_layout.jsp" />
+<%-- 
+<c:if test="${message != null}">
+
+<div class="alert alert-primary fade show" role="alert">
+${message}
+</div>
+<% session.removeAttribute("message"); %>
+</c:if> --%>
 
 <form action="${appName}course/add" method="post">
 <div class="form-group">
