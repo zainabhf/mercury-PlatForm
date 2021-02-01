@@ -13,5 +13,6 @@ Here, you will learn and earn.
 </p> 
 
 <div id="fotter">
-<p>CopyRight2021: Atheer, Moudi, Ghosson, and Zainab</p>
+<p> <img src="imges/mercury_logo.png" alt="mercury logo" class="icon">
+CopyRight2021: Atheer, Moudi, Ghosson, and Zainab</p>
 </div>
