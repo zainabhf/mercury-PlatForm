@@ -8,8 +8,9 @@
  ${user.emailAddress} <br>
  <a href="${appName}user/edit?id=${user.id}">Edit Profile</a>
  
+ <br>
  <c:forEach items="${user.getCourses()}" var="course">
-  ${course.courseName}<br>
+   - <a href="${appName}course/detail?id=${course.courseId}">${course.courseName}</a><br>
  </c:forEach>
 </p></div>
 
