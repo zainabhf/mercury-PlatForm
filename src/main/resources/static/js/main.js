@@ -1,1 +1,1 @@
- alert("Hi");
+$('.fade').slideUp(4000);

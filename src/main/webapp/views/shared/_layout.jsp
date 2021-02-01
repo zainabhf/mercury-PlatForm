@@ -42,9 +42,15 @@
 	</div>
 	
 <%}else{ %>
+<<<<<<< HEAD
 <div style="float:right;">
 	<a href="${appName}user/login" class="nav-link">login</a>
 	<a href="${appName}user/register"class="nav-link" >Registration</a>
+</div>
+<div style="float:right;">
+	<a href="${appName}user/login" class="navbar-brand ">login</a>
+	<a href="${appName}user/register"class="navbar-brand " >Sign-up</a>
+<
 </div>
 
 	
@@ -59,7 +65,9 @@
 ${message}
 </div>
 <% session.removeAttribute("message"); %>
+<
 </c:if> 
+
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
