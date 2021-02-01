@@ -42,7 +42,7 @@
 	</div>
 	
 <%}else{ %>
-<div style="float:left;">
+<div style="float:right;">
 	<a href="${appName}user/login" class="nav-link">login</a>
 	<a href="${appName}user/register"class="nav-link" >Registration</a>
 </div>
