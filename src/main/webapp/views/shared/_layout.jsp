@@ -40,7 +40,7 @@
 <%}else{ %>
 <div style="position: absolute; right: 0; top :0;">
 	<a href="${appName}user/login" class="navbar-brand ">login</a>
-	<a href="${appName}user/register"class="navbar-brand " >Registration</a>
+	<a href="${appName}user/register"class="navbar-brand " >Sign-up</a>
 </div>
 
 	
