@@ -215,35 +215,11 @@ nav{
     font-family: 'Yusei Magic';
 }
 
-.h2{
-	color:#30475e;
-	font-family: 'Londrina Solid', cursive;
-	 font-size: 50px;
-}
-
-.p{
-	color:#276678;
-	font-family: 'Permanent Marker', cursive;
-	font-size: 20px;
-}
-
-.info{
-	font-family: 'Courgette', cursive;
-	font-size: 20px;
-	color:#727272;
-}
 
 
-.Center { 
-    width:500px; 
-    height:1000px; 
-    position: fixed; 
-    top:65%; 
-    left: 50%; 
-    margin-top: -100px; 
-    margin-left: -100px; 
-}
-<<<<<<< HEAD
+
+
+
 .h2{
 	color:#30475e;
 	font-family: 'Londrina Solid', cursive;
@@ -263,8 +239,8 @@ color:#727272;
   width:500px; 
   height:1000px; 
   position: fixed; 
-   top:65%; 
-left: 50%; 
+   top:70%; 
+left: 45%; 
  margin-top: -100px; 
  margin-left: -100px; 
         }  
@@ -281,23 +257,15 @@ left: 50%;
 
 
 .header-img {
-  	width: 80px;
-  	height: 150px;
+  	width: 500px;
+  	height: 300px;
     display: block;
   margin-left: auto;
   margin-right: auto;
  
 }
         
-=======
 
-.botton { 
-    width:500px; 
-    height:1000px; 
-    position: fixed; 
-    top:100%; 
-    left:50%; 
-    margin-top: -100px; 
-    margin-left: -100px; 
-}
->>>>>>> 1877c46bbe2b73a7823bab4d8416c7a1689eb990
+
+
+
