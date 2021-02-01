@@ -3,7 +3,7 @@
     pageEncoding="ISO-8859-1"%>
     <jsp:include page="../shared/_layout.jsp" />
 
-
+<div class=" mycontainer">
 <c:forEach items="${teachers}" var="teacher">
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="${teacher.teacherPic}" alt="Card image cap">
@@ -40,4 +40,4 @@
  
 
 </c:forEach>
-	
+	</div>
