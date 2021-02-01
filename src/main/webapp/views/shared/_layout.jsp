@@ -16,7 +16,7 @@
 
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="imges/mercury_logo_white.png">
+<link rel="icon" href="imges/mercury_whiteLogo.png">
 <title>Mercury Platform</title>
 </head>
 <body>
