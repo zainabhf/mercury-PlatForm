@@ -42,15 +42,15 @@
 	</div>
 	
 <%}else{ %>
-<<<<<<< HEAD
-<div style="float:right;">
+
+<div style="float: right;">
 	<a href="${appName}user/login" class="nav-link">login</a>
 	<a href="${appName}user/register"class="nav-link" >Registration</a>
 </div>
 <div style="float:right;">
-	<a href="${appName}user/login" class="navbar-brand ">login</a>
-	<a href="${appName}user/register"class="navbar-brand " >Sign-up</a>
-<
+	<a href="${appName}user/login" class="nav-link">login</a>
+	<a href="${appName}user/register"class="nav-link" >Sign-up</a>
+
 </div>
 
 	
