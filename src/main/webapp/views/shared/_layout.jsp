@@ -24,35 +24,27 @@
 </a>
 </div>
 <nav>
-
-<div class="navbar">
+<div class="navbar-header">
 <a href="${appName}" class="nav-link">Home</a>
-<a href="${appName}course/index" class="nav-link">courses</a>
+<a href="${appName}course/index" class="nav-link">Courses</a>
 <a href="${appName}teacher/index"class="nav-link">Teachers</a>
-
 <% if(session.getAttribute("user") != null){%>
 <% if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
-	<a href="${appName}course/add"class="nav-link">add Course</a>
+	<a href="${appName}course/add"class="nav-link">Add Course</a>
 	<a href="${appName}teacher/add"class="nav-link">Add Teacher</a>
-	</div>
 	<%} %> 
-	<div style="float: right;">
+	<div style="position: absolute; right: 0; top :90px;">
 	<a href="${appName}user/profile?id=${user.id}" class="nav-link">Profile</a>
 	<a href="${appName}user/logout" class="nav-link">Logout</a>
 	</div>
-	
 <%}else{ %>
-
-<div style="float:right;">
-	<a href="${appName}user/login" class="nav-link">login</a>
+<div style="position: absolute; right: 0; top :90px;">
+	<a href="${appName}user/login" class="nav-link">Login</a>
 	<a href="${appName}user/register"class="nav-link" >Sign-up</a>
-
 </div>
-
 	
 <%} %>
-
-
+</div>
 </nav>
 
 <c:if test="${message != null}">
@@ -71,13 +63,13 @@ ${message}
 	$('.fade').slideUp(4000);
 	</script>
 
-<footer class ="footer">
+<div class ="footer">
 CopyRight2021 :
-  <a href="atheer@mercury.com">ATHEER</a>
-  <a href="Moudi@mercury.com">MOUDI</a>
-  <a href="ghosoon@mercury.com">GHOSOON</a>
-  <a href="zainab@mercury.com">ZAINAB</a>
-</footer>
+  ATHEER
+ MOUDI
+  GHOSOON
+ZAINAB
+</div>
 
 
 

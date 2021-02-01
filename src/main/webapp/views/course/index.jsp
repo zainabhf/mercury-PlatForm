@@ -4,8 +4,8 @@
 <jsp:include page="../shared/_layout.jsp" />
 
 
-<div class="row">
-  <div class="col-sm-6">
+<div class=" mycontainer">
+
 	<c:forEach items="${courses}" var="course">
 	
 	 <div class="card" style="width: 18rem;">
@@ -19,4 +19,4 @@
 	 	
 	</c:forEach>
 	</div>
-	 </div>
+	 
