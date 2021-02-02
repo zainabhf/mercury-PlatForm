@@ -47,7 +47,7 @@ public class CourseController {
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 		
-			 mv.setViewName("course/index"); 
+			mv.setViewName("home/home");  
 			 return mv;
 			
 		}
@@ -145,16 +145,16 @@ public class CourseController {
 	
 	
 	@GetMapping("course/edit")
-	public String editcourse(@RequestParam int id) {
+	public ModelAndView editcourse(@RequestParam int id) {
 		
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("user")) {
-			/* mv.setViewName("course/index"); */
-			return "redirect:index";
+			mv.setViewName("home/home"); 
+			return mv;
 		}
 		Course course = courseDao.findById(id);
-		/* mv.setViewName("course/edit"); */
+		 mv.setViewName("course/edit"); 
 		mv.addObject("course", course);
 
 		
@@ -163,8 +163,7 @@ public class CourseController {
 		
 		var te = teacherDao.findAll();
 		mv.addObject("teacher", te);
-		
-		return "redirect:edit";
+		return mv;
 	}
 
 

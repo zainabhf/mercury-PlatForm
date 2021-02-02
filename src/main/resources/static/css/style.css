@@ -189,9 +189,12 @@ nav{
 }
 
 #landing-page{
-	width: 90%;
-	margin: 0 auto;
-	height: 100%
+	padding: 20px;
+	background-position: center; 
+	background-repeat: no-repeat; 
+	background-size: cover;
+	height: 800px;
+	background-image: url("../imges/landingPage.png");
 }
 
 .img-container{
@@ -213,10 +216,9 @@ nav{
     color: white;
     font-size: 30px;
     font-family: 'Yusei Magic';
+    text-align: left;
+    
 }
-
-
-
 
 
 
