@@ -22,7 +22,6 @@
 	flex-direction: row;
 	
 }
-
 .card:hover{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	transform: scale(1);
@@ -180,7 +179,6 @@ nav{
 	padding: 3px;
 	text-align: center;
 }
-
 #landing-page{
 	width: 90%;
 	margin: 0 auto;
@@ -189,14 +187,12 @@ nav{
 .img-container{
 	text-align: center;
 }
-
 .icon{
 	width: 50px;
 	height: 50px;
 	margin-right: 0;
 	margin-bottom: 0;
 }
-
 #text-above{
     position: absolute;
     top: 80%;
@@ -206,37 +202,48 @@ nav{
     font-size: 30px;
     font-family: 'Yusei Magic';
 }
-
 .h2{
 	color:#30475e;
 	font-family: 'Londrina Solid', cursive;
 	 font-size: 50px;
 }
-
 .p{
-	color:#276678;
-	font-family: 'Permanent Marker', cursive;
-	font-size: 20px;
+color:#276678;
+font-family: 'Permanent Marker', cursive;
+font-size: 20px;
 }
-
 .info{
-	font-family: 'Courgette', cursive;
-	font-size: 20px;
-	color:#727272;
+font-family: 'Courgette', cursive;
+font-size: 20px;
+color:#727272;
 }
-
-
 .Center { 
-    width:500px; 
-    height:1000px; 
-    position: fixed; 
-    top:65%; 
-    left: 50%; 
-    margin-top: -100px; 
-    margin-left: -100px; 
+  width:500px; 
+  height:1000px; 
+  position: fixed; 
+   top:70%; 
+left: 45%; 
+ margin-top: -100px; 
+ margin-left: -100px; 
+        }  
+        
+.botton { 
+     width:500px; 
+ height:1000px; 
+ position: fixed; 
+ top:100%; 
+ left:50%; 
+  margin-top: -100px; 
+  margin-left: -100px; 
+        }
+.header-img {
+  	width: 500px;
+  	height: 300px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
 }
-
-
 /*Atheer CSS - user login page - Start code*/
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
@@ -261,7 +268,6 @@ nav{
   color: black;
   text-align: center;
 }
-
 .botton { 
     width:500px; 
     height:1000px; 
@@ -271,4 +277,3 @@ nav{
     margin-top: -100px; 
     margin-left: -100px; 
 }
-
