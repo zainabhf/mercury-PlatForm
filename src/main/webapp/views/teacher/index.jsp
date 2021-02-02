@@ -6,7 +6,7 @@
 <div class=" mycontainer">
 <c:forEach items="${teachers}" var="teacher">
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="${teacher.teacherPic}" alt="Card image cap">
+  <img class="card-img-top" src="${teacher.teacherPic}" alt="Card image cap"style="height:200px;width:250px;">
   <div class="card-body">
     <h5 class="card-title">Teacher <a href="${appName}teacher/details?id=${teacher.id}">${teacher.teacherName}</a></h5>
         <h5 class="card-text">Certificate: ${teacher.certificate}</h5>
