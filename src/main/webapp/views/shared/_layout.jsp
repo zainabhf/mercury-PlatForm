@@ -23,9 +23,11 @@
 <body>
 
 <div>
+<center>
 <a href="${appName}">
 <h1 class="font-effect-emboss" id="h1"> ${Welcome}</h1>
 </a>
+</center>
 </div>
 <nav>
 <div class="navbar-header">
