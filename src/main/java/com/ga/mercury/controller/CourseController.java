@@ -42,26 +42,26 @@ public class CourseController {
 	
 	// add course
 	@GetMapping("course/add")
-	public String addCourse(){
+	public ModelAndView addCourse(){
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 		
-			/* mv.setViewName("course/index"); */
-			/* return mv; */
-		return "redirect:index";
+			 mv.setViewName("course/index"); 
+			 return mv;
+			
 		}
 
 		
-		/* mv.setViewName("course/add"); */
+		 mv.setViewName("course/add");
 			
 			var te = teacherDao.findAll();
 			mv.addObject("teacher", te);
 			
 			HomeController hm = new HomeController();
 			hm.setAppName(mv, env);
-			/* return mv; */
-			return "redirect:add";
+			 return mv; 
+			
 	}
 	// adding course n data base
 	@PostMapping("course/add")
