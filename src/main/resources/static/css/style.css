@@ -239,7 +239,7 @@ color:#727272;
   width:500px; 
   height:1000px; 
   position: fixed; 
-   top:70%; 
+   top:75%; 
 left: 45%; 
  margin-top: -100px; 
  margin-left: -100px; 
@@ -248,11 +248,10 @@ left: 45%;
 .botton { 
      width:500px; 
  height:1000px; 
- position: fixed; 
- top:100%; 
- left:50%; 
-  margin-top: -100px; 
-  margin-left: -100px; 
+ position:fixed; 
+top:670px; 
+ left:45%; 
+
         }
 
 

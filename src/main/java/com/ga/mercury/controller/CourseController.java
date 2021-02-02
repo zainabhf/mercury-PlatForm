@@ -42,25 +42,26 @@ public class CourseController {
 	
 	// add course
 	@GetMapping("course/add")
-	public ModelAndView addCourse(){
+	public String addCourse(){
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 		
-			mv.setViewName("course/index");
-			return mv;
-		
+			/* mv.setViewName("course/index"); */
+			/* return mv; */
+		return "redirect:index";
 		}
 
 		
-			mv.setViewName("course/add");
+		/* mv.setViewName("course/add"); */
 			
 			var te = teacherDao.findAll();
 			mv.addObject("teacher", te);
 			
 			HomeController hm = new HomeController();
 			hm.setAppName(mv, env);
-			return mv;
+			/* return mv; */
+			return "redirect:add";
 	}
 	// adding course n data base
 	@PostMapping("course/add")
@@ -69,7 +70,7 @@ public class CourseController {
 		ModelAndView mv = new ModelAndView();
 		courseDao.save(courses);
 
-		return "redirect:/course/index";
+		return "redirect:index";
 	}
 	
 	//index course
@@ -144,16 +145,16 @@ public class CourseController {
 	
 	
 	@GetMapping("course/edit")
-	public ModelAndView editcourse(@RequestParam int id) {
+	public String editcourse(@RequestParam int id) {
 		
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("user")) {
-			mv.setViewName("course/index");
-			return mv;
+			/* mv.setViewName("course/index"); */
+			return "redirect:index";
 		}
 		Course course = courseDao.findById(id);
-		mv.setViewName("course/edit");
+		/* mv.setViewName("course/edit"); */
 		mv.addObject("course", course);
 
 		
@@ -163,7 +164,7 @@ public class CourseController {
 		var te = teacherDao.findAll();
 		mv.addObject("teacher", te);
 		
-		return mv;
+		return "redirect:edit";
 	}
 
 
@@ -173,7 +174,7 @@ public class CourseController {
 		HttpSession session = request.getSession();
 		ModelAndView mv = new ModelAndView();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
-			return "redirect:course/index";
+			return "redirect:index";
 		}
 	
 		courseDao.deleteById(id);
