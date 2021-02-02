@@ -44,11 +44,11 @@ public class UserController {
 			
 			User user = userDao.findById(id);
 			mv.addObject("user", user);
-			mv.addObject("message", "Logged in successfully");
+			/* mv.addObject("message", "Logged in successfully"); */
 			
 		}else {
 			mv.setViewName("user/login");
-			mv.addObject("message", "Email or password is incorrect");
+			/* mv.addObject("message", "Email or password is incorrect"); */
 
 		}
 		HomeController hc = new HomeController();
@@ -87,12 +87,12 @@ public class UserController {
 				session.setAttribute("userId", matchUser.getId());
 				session.setAttribute("userRole", matchUser.getRole());
 				session.setAttribute("userCourse", matchUser.getCourses());
-				session.setAttribute("message", "You're logged in sccessfully");
+				/* session.setAttribute("message", "You're logged in sccessfully"); */
 				return "redirect:profile?id="+matchUser.getId();
 			}
 		}
 		
-		session.setAttribute("message", "Email or Password is Incorrect");
+		/* session.setAttribute("message", "Email or Password is Incorrect"); */
 		return "redirect:login";
 	}
 
@@ -117,7 +117,7 @@ public class UserController {
 				
 		for(User userFromBD: users) {
 			if(userFromBD.getEmailAddress().equals(user.getEmailAddress())) {
-				mv.addObject("message", "User Already Exists");
+				/* mv.addObject("message", "User Already Exists"); */
 				return "redirect:register";
 			}
 		}
@@ -132,9 +132,20 @@ public class UserController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/edit");
-		
-		User user = userDao.findById(id);
-		mv.addObject("user", user);
+		if(isUserLoggedIn()) {
+
+			mv.setViewName("user/profile");
+			
+			User user = userDao.findById(id);
+			mv.addObject("user", user);
+			/* mv.addObject("message", "Logged in successfully"); */
+			
+		}else {
+			mv.setViewName("user/login");
+			/* mv.addObject("message", "Email or password is incorrect"); */
+
+		}
+	
 		
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
