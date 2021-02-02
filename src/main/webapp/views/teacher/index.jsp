@@ -12,12 +12,9 @@
         <h5 class="card-text">Certificate: ${teacher.certificate}</h5>
     
     <br> 
-	<%if(session.getAttribute("user") != null){%>
-<%if(session.getAttribute("userRole").equals("ROLE_ADMIN")){%>
-<a href="${appName}teacher/edit?id=${teacher.id}">Edit</a> |
-<a href="${appName}teacher/delete?id=${teacher.id}">Delete</a><br>
+	<br>
 
- <%}}%>
+ 
 <p>
   </div>
 </div>
