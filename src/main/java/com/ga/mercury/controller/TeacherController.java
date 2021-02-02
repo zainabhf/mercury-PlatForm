@@ -47,24 +47,26 @@ public class TeacherController {
 
 	public ModelAndView addTeacher() {
 		ModelAndView mv = new ModelAndView();
-
-		HttpSession session = request.getSession();
-		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
-
-		mv.setViewName("teacher/index");
-		return mv;
-		}
-		mv.setViewName("teacher/add");
 		HomeController hc = new HomeController();
 		hc.setAppName(mv, env);
+		 mv.setViewName("teacher/add"); 
+		HttpSession session = request.getSession();
+		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
+			 mv.setViewName("home/home"); 
+	
+
+		}
+		
+		
 		return mv;
+
 }
 	
 	// posting add teacher
 	@PostMapping("teacher/add")	
 	public String addTeacher(Teacher teacher) {
 	dao.save(teacher);
-	return "redirect:/teacher/index";
+	return "redirect:index";
 	
 	}
 	// request for edit teacher
@@ -72,21 +74,24 @@ public class TeacherController {
 	@GetMapping("/teacher/edit")
 	public ModelAndView editTeacher(@RequestParam int id) {
 		ModelAndView mv = new ModelAndView();
+		HomeController hc = new HomeController();
+		hc.setAppName(mv, env);
+		 mv.setViewName("teacher/edit"); 
 		HttpSession session = request.getSession();
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 			
-			mv.setViewName("teacher/index");
-			return mv;
+			 mv.setViewName("home/home"); 
+		
 			}
 		
 		Teacher teacher = dao.findById(id);
 		
 		
-		mv.setViewName("teacher/edit");
+		 
 		mv.addObject("teacher", teacher);
 		
-		HomeController hc = new HomeController();
-		hc.setAppName(mv, env);
+		
+	
 		return mv;
 }
 	
@@ -97,10 +102,10 @@ public class TeacherController {
 		if (!uc.isUserLoggedIn()|| session.getAttribute("userRole").equals("ROLE_STUDENT")) {
 			
 			
-			return " redirect:teacher/index";
+			return " redirect:index";
 			}
 		dao.deleteById(id);
-		return "redirect:/teacher/index";
+		return "redirect:index";
 		
 		
 	}
